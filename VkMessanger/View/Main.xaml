@@ -1,0 +1,22 @@
+﻿<Window x:Class="VkGUI.View.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="AllElementsStyle">
+            <Setter Property="Control.Margin" Value="5"/>
+            <Setter Property="Control.Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <ScrollViewer CanContentScroll="True" UseLayoutRounding="True" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+       <Grid>
+           <Grid.RowDefinitions>
+               <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+        <Frame Grid.Row="1" Source="Pages/MainPage.xaml" DataContext="Dispatcher" NavigationUIVisibility="Automatic"></Frame>
+           <TextBlock Grid.Row="2" Background="Beige" Text="{Binding AccessToken, Mode=Default}"></TextBlock>
+        </Grid>
+    </ScrollViewer>
+</Window>

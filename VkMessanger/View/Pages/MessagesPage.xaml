@@ -1,0 +1,50 @@
+﻿<Page x:Class="VkGUI.View.Pages.MessagesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:vkGui="clr-namespace:VkGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="MessagesPage" WindowTitle="Мои Сообщения">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+    <StackPanel>
+        <StackPanel>
+            <!-- <ContentPresenter Grid.Row="1" x:Name="Friend" /> -->
+            <Label>
+                <Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink NavigateUri="FriendsPage.xaml">Friends</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink NavigateUri="AudiosPage.xaml">Audio</Hyperlink>
+            </Label>
+
+        </StackPanel>
+    </StackPanel>
+        
+        <StackPanel  x:Name="messageContainer" 
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Top" 
+                     Orientation="Vertical"
+                     CanVerticallyScroll="False"
+                     CanHorizontallyScroll="True"
+                     >
+           
+                
+            
+        </StackPanel>
+        
+       </Grid>
+</Page>

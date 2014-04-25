@@ -1,0 +1,154 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   VkInterfaces/Domain/IMethod.cs
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   TestVkAuth/TestVkApi.cs
+#	modified:   TestVkAuth/bin/Debug/TestVkAuth.dll
+#	modified:   TestVkAuth/bin/Debug/TestVkAuth.pdb
+#	modified:   TestVkAuth/bin/Debug/VkApi.dll
+#	modified:   TestVkAuth/bin/Debug/VkApi.pdb
+#	modified:   TestVkAuth/bin/Debug/VkAuth.dll
+#	modified:   TestVkAuth/bin/Debug/VkAuth.pdb
+#	modified:   TestVkAuth/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   TestVkAuth/obj/Debug/TestVkAuth.csproj.FileListAbsolute.txt
+#	modified:   TestVkAuth/obj/Debug/TestVkAuth.csprojResolveAssemblyReference.cache
+#	modified:   TestVkAuth/obj/Debug/TestVkAuth.dll
+#	modified:   UsageTkAuth/App.config
+#	modified:   UsageTkAuth/Program.cs
+#	modified:   UsageTkAuth/bin/Debug/UsageTkAuth.exe
+#	modified:   UsageTkAuth/bin/Debug/UsageTkAuth.exe.config
+#	modified:   UsageTkAuth/bin/Debug/UsageTkAuth.pdb
+#	modified:   UsageTkAuth/bin/Debug/VkApi.dll
+#	modified:   UsageTkAuth/bin/Debug/VkApi.pdb
+#	modified:   UsageTkAuth/bin/Debug/VkAuth.dll
+#	modified:   UsageTkAuth/bin/Debug/VkAuth.pdb
+#	modified:   UsageTkAuth/bin/Debug/VkManager.dll
+#	modified:   UsageTkAuth/bin/Debug/VkManager.pdb
+#	modified:   UsageTkAuth/bin/Debug/VkMessanger.exe
+#	modified:   UsageTkAuth/bin/Debug/VkMessanger.pdb
+#	modified:   UsageTkAuth/bin/Debug/VkObjects.dll
+#	modified:   UsageTkAuth/bin/Debug/VkObjects.pdb
+#	modified:   UsageTkAuth/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   UsageTkAuth/obj/Debug/UsageTkAuth.exe
+#	modified:   UsageTkAuth/obj/Debug/UsageTkAuth.pdb
+#	modified:   UsageTkAuth/obj/Debug/UsageVkApp.csproj.FileListAbsolute.txt
+#	modified:   UsageTkAuth/obj/Debug/UsageVkApp.csprojResolveAssemblyReference.cache
+#	modified:   VkApi/bin/Debug/VkApi.dll
+#	modified:   VkApi/bin/Debug/VkApi.pdb
+#	modified:   VkApi/bin/Debug/VkAuth.dll
+#	modified:   VkApi/bin/Debug/VkAuth.pdb
+#	modified:   VkApi/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   VkApi/obj/Debug/VkApi.csproj.FileListAbsolute.txt
+#	modified:   VkApi/obj/Debug/VkApi.csprojResolveAssemblyReference.cache
+#	modified:   VkApi/obj/Debug/VkApi.dll
+#	modified:   VkApi/obj/Debug/VkApi.pdb
+#	modified:   VkApp.sln
+#	modified:   VkApp.sln.DotSettings.user
+#	modified:   VkApp.v11.suo
+#	modified:   VkAuth/VkAuth.csproj
+#	modified:   VkAuth/bin/Debug/VkAuth.dll
+#	modified:   VkAuth/bin/Debug/VkAuth.pdb
+#	modified:   VkAuth/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   VkAuth/obj/Debug/VkAuth.csproj.FileListAbsolute.txt
+#	modified:   VkAuth/obj/Debug/VkAuth.dll
+#	modified:   VkAuth/obj/Debug/VkAuth.pdb
+#	modified:   VkController/VkController.cs
+#	modified:   VkController/VkController.csproj
+#	modified:   VkInterfaces/Controller/IController.cs
+#	modified:   VkInterfaces/Services/IBaseService.cs
+#	deleted:    VkInterfaces/Services/IMethod.cs
+#	deleted:    VkInterfaces/Services/IParameter.cs
+#	modified:   VkInterfaces/ViewModels/IViewModel.cs
+#	modified:   VkInterfaces/VkInterfaces.cs
+#	modified:   VkInterfaces/VkInterfaces.csproj
+#	modified:   VkManager/Commands/MessageCommand/CmdGetHistoryWithUser.cs
+#	modified:   VkManager/Commands/MessageCommand/CmdGetUserMessages.cs
+#	modified:   VkManager/Commands/MessageCommand/MessageCommand.cs
+#	modified:   VkManager/Commands/PhotoCommand/CmdGetPhotoByUserId.cs
+#	modified:   VkManager/Commands/PhotoCommand/PhotoCommand.cs
+#	modified:   VkManager/Commands/UserCommand/CmdGetUserFriends.cs
+#	modified:   VkManager/Commands/UserCommand/CmdGetUsersOnLine.cs
+#	modified:   VkManager/Commands/UserCommand/UserCommand.cs
+#	modified:   VkManager/Commands/VkCommand.cs
+#	modified:   VkManager/Parser/MessageParser.cs
+#	modified:   VkManager/Parser/PhotoParser.cs
+#	modified:   VkManager/Parser/UserParser.cs
+#	modified:   VkManager/Parser/VkParser.cs
+#	modified:   VkManager/Services/MessageService.cs
+#	modified:   VkManager/Services/PhotoService.cs
+#	modified:   VkManager/Services/UserService.cs
+#	modified:   VkManager/Services/VkService.cs
+#	modified:   VkManager/VkDispatcher.cs
+#	modified:   VkManager/VkServices.csproj
+#	modified:   VkManager/bin/Debug/VkApi.dll
+#	modified:   VkManager/bin/Debug/VkApi.pdb
+#	modified:   VkManager/bin/Debug/VkAuth.dll
+#	modified:   VkManager/bin/Debug/VkAuth.pdb
+#	modified:   VkManager/bin/Debug/VkManager.dll
+#	modified:   VkManager/bin/Debug/VkManager.pdb
+#	modified:   VkManager/bin/Debug/VkObjects.dll
+#	modified:   VkManager/bin/Debug/VkObjects.pdb
+#	modified:   VkManager/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   VkManager/obj/Debug/VkManager.dll
+#	modified:   VkManager/obj/Debug/VkManager.pdb
+#	modified:   VkMessanger/Model/BaseModel.cs
+#	modified:   VkMessanger/Model/MessageModel.cs
+#	modified:   VkMessanger/Model/VkModel.cs
+#	modified:   VkMessanger/ViewModel/Messages/MessageViewModel.cs
+#	modified:   VkMessanger/bin/Debug/VkAuth.dll
+#	modified:   VkMessanger/bin/Debug/VkAuth.pdb
+#	modified:   VkMessanger/bin/Debug/VkMessanger.exe
+#	modified:   VkMessanger/bin/Debug/VkMessanger.pdb
+#	modified:   VkMessanger/obj/Debug/App.g.cs
+#	modified:   VkMessanger/obj/Debug/App.g.i.cs
+#	modified:   VkMessanger/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   VkMessanger/obj/Debug/View/Main.g.cs
+#	modified:   VkMessanger/obj/Debug/View/Main.g.i.cs
+#	modified:   VkMessanger/obj/Debug/VkGUI.csproj.FileListAbsolute.txt
+#	modified:   VkMessanger/obj/Debug/VkGUI.csproj.GenerateResource.Cache
+#	modified:   VkMessanger/obj/Debug/VkGUI.csprojResolveAssemblyReference.cache
+#	modified:   VkMessanger/obj/Debug/VkMessanger.exe
+#	modified:   VkMessanger/obj/Debug/VkMessanger.pdb
+#	modified:   VkMessanger/obj/Debug/VkMessanger_MarkupCompile.cache
+#	modified:   VkMessanger/obj/Debug/VkMessanger_MarkupCompile.i.cache
+#	deleted:    VkObjects/Interfaces/IPhoto.cs
+#	deleted:    VkObjects/Interfaces/IUser.cs
+#	deleted:    VkObjects/Interfaces/IVkMessage.cs
+#	deleted:    VkObjects/Interfaces/IVkObject.cs
+#	modified:   VkObjects/VkModels.csproj
+#	deleted:    VkObjects/VkObjects/Message.cs
+#	deleted:    VkObjects/VkObjects/MessageList.cs
+#	deleted:    VkObjects/VkObjects/Photo.cs
+#	deleted:    VkObjects/VkObjects/PhotoList.cs
+#	deleted:    VkObjects/VkObjects/User.cs
+#	deleted:    VkObjects/VkObjects/UserList.cs
+#	deleted:    VkObjects/VkObjects/VkObject.cs
+#	modified:   VkObjects/bin/Debug/VkObjects.dll
+#	modified:   VkObjects/bin/Debug/VkObjects.pdb
+#	modified:   VkObjects/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   VkObjects/obj/Debug/VkModels.csproj.FileListAbsolute.txt
+#	modified:   VkObjects/obj/Debug/VkObjects.dll
+#	modified:   VkObjects/obj/Debug/VkObjects.pdb
+#	modified:   packages/repositories.config
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	DomainTests/
+#	VkInterfaces/Domain/IParameter.cs
+#	VkInterfaces/Services/IMessageService.cs
+#	VkInterfaces/Services/IUserService.cs
+#	VkInterfaces/ViewModels/IMessageViewModel.cs
+#	VkManager/ServiceFactory.cs
+#	VkManager/packages.config
+#	VkObjects/Models/
+

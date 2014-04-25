@@ -1,0 +1,41 @@
+﻿<Page x:Class="VkGUI.View.Pages.FriendsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Friends"
+      KeepAlive="False">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+    <StackPanel>
+        <StackPanel Name="spFriendsCotainer"></StackPanel>
+       <StackPanel>
+           <!-- <ContentPresenter Grid.Row="1" x:Name="Friend" /> -->
+           <Label><Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink></Label>
+            <Label>
+                <Hyperlink NavigateUri="MessagesPage.xaml">Messages</Hyperlink>
+            </Label>
+            <Label>
+                <Hyperlink NavigateUri="AudiosPage.xaml">Audio</Hyperlink>
+            </Label>
+           
+        </StackPanel>
+        <StackPanel>
+           
+        </StackPanel>
+
+    </StackPanel>
+    <StackPanel Grid.Column="1">
+        <Label x:Name="lblName" Content="User Name"/>
+        <TextBox x:Name="txbxName" Text="{Binding Path=Friend.Name, Mode=TwoWay}"/>
+        <Label x:Name="lblSurname" Content="User Surname"/>
+        <TextBox x:Name="txbxSurname" Text="{Binding Path=Friend.Surname, Mode=TwoWay}"/>
+        <Button x:Name="btnUpdate" Content="Update Information"/>
+    </StackPanel>
+    </Grid>
+</Page>

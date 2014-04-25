@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="VkComponents">
+  <componentModelMoniker Id="f2f04366-d890-4f42-a0bf-d4da1dee0729" />
+  <nestedChildShapes>
+    <componentShape Id="191d6586-a989-49d8-9db9-50e340552fbe" absoluteBounds="2.625, 0.75, 1.5, 0.95" customColor="161, 199, 231" whiteBoxBoundsHeight="0" whiteBoxBoundsWidth="0" blackBoxBoundsHeight="0" blackBoxBoundsWidth="0" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0">
+      <componentMoniker Id="21707346-8fd9-4d4e-b45b-20508755631c" LastKnownName="VkMethods" />
+    </componentShape>
+    <componentShape Id="7ec83b78-ed77-45a4-9816-43638f7181c5" absoluteBounds="5.375, 0.875, 1.5, 1.725" customColor="161, 199, 231" whiteBoxBoundsHeight="1.725" whiteBoxBoundsWidth="1.5" blackBoxBoundsHeight="0.7" blackBoxBoundsWidth="1.5" whiteBoxTopEdgeShapesCount="0" whiteBoxRightEdgeShapesCount="0" whiteBoxBottomEdgeShapesCount="0" whiteBoxLeftEdgeShapesCount="0" blackBoxTopEdgeShapesCount="0" blackBoxRightEdgeShapesCount="0" blackBoxBottomEdgeShapesCount="0" blackBoxLeftEdgeShapesCount="0" whiteBoxSettingsInitialized="true" blackBoxSettingsInitialized="true">
+      <componentMoniker Id="011dee11-5904-4765-92b8-dea80764c06f" LastKnownName="VkAuth" />
+    </componentShape>
+    <commentShape Id="88089f79-0d36-4f9f-82d4-4df384389815" absoluteBounds="7.375, 0.5, 2, 1.25" customColor="251, 247, 200">
+      <commentMoniker Id="91f005c5-4233-45b9-b27b-60b3c4540efe" />
+      <relativeChildShapes />
+    </commentShape>
+    <commentConnector edgePoints="[(7.375 : 1.3125); (6.875 : 1.3125)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="88089f79-0d36-4f9f-82d4-4df384389815" />
+        <componentShapeMoniker Id="7ec83b78-ed77-45a4-9816-43638f7181c5" />
+      </nodes>
+    </commentConnector>
+  </nestedChildShapes>
+</componentDiagram>

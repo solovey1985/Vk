@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E948C871-0B23-42EE-A8D1-4CA8D05EDA3C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsageTkAuth</RootNamespace>
+    <AssemblyName>UsageTkAuth</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.4.2\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{3a88c782-ca74-468b-99fa-60c3b5482e9a}</Project>
+      <Name>ViewModels %28ViewModels\ViewModels%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkApi\VkApi.csproj">
+      <Project>{82580eca-681a-422c-8dfb-e89bcb851abf}</Project>
+      <Name>VkApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkAuth\VkAuth.csproj">
+      <Project>{877aa5ea-bff3-4ea2-8b84-2de85e7006b1}</Project>
+      <Name>VkAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkController\VkControllers.csproj">
+      <Project>{c68f2269-efb5-45fa-87ae-d4e40943c8b8}</Project>
+      <Name>VkControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkInterfaces\VkInterfaces.csproj">
+      <Project>{1c717e7d-fe26-406f-b635-4adf4de6da5e}</Project>
+      <Name>VkInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkManager\VkServices.csproj">
+      <Project>{5add89f5-36e0-4676-8646-b3b00b9f366f}</Project>
+      <Name>VkServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkMessanger\VkGUI.csproj">
+      <Project>{7fb97b6d-68c2-4e31-bb8a-ea6b03c6be02}</Project>
+      <Name>VkGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkObjects\VkModels.csproj">
+      <Project>{c5ec8e30-2c34-48e5-8fdb-f69a4f40bd75}</Project>
+      <Name>VkModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkUtillites\VkUtillites.csproj">
+      <Project>{d1051876-4fed-40a5-8408-5d07d12ccad3}</Project>
+      <Name>VkUtillites</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

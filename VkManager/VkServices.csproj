@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ADD89F5-36E0-4676-8646-B3B00B9F366F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VkServices</RootNamespace>
+    <AssemblyName>VkServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\MessageCommand\CmdGetHistoryWithUser.cs" />
+    <Compile Include="Commands\MessageCommand\CmdGetUserMessages.cs" />
+    <Compile Include="Commands\MessageCommand\MessageCommand.cs" />
+    <Compile Include="Commands\PhotoCommand\CmdGetPhotoByUserId.cs" />
+    <Compile Include="Commands\PhotoCommand\PhotoCommand.cs" />
+    <Compile Include="Commands\UserCommand\CmdGetUserFriends.cs" />
+    <Compile Include="Commands\UserCommand\CmdGetUsersOnLine.cs" />
+    <Compile Include="Commands\UserCommand\UserCommand.cs" />
+    <Compile Include="Commands\VkCommand.cs" />
+    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="Services\PhotoService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Parser\MessageParser.cs" />
+    <Compile Include="Services\VkService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Parser\PhotoParser.cs" />
+    <Compile Include="Parser\UserParser.cs" />
+    <Compile Include="Parser\VkParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VkDispatcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{3A88C782-CA74-468B-99FA-60C3B5482E9A}</Project>
+      <Name>ViewModels %28ViewModels\ViewModels%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkApi\VkApi.csproj">
+      <Project>{82580eca-681a-422c-8dfb-e89bcb851abf}</Project>
+      <Name>VkApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkAuth\VkAuth.csproj">
+      <Project>{877aa5ea-bff3-4ea2-8b84-2de85e7006b1}</Project>
+      <Name>VkAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkInterfaces\VkInterfaces.csproj">
+      <Project>{1c717e7d-fe26-406f-b635-4adf4de6da5e}</Project>
+      <Name>VkInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkObjects\VkModels.csproj">
+      <Project>{c5ec8e30-2c34-48e5-8fdb-f69a4f40bd75}</Project>
+      <Name>VkModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkUtillites\VkUtillites.csproj">
+      <Project>{d1051876-4fed-40a5-8408-5d07d12ccad3}</Project>
+      <Name>VkUtillites</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

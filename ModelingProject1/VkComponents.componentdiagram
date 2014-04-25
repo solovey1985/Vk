@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="f2f04366-d890-4f42-a0bf-d4da1dee0729" name="VkComponents" linkedPackageId="1dfa7b66-84fa-4e22-b4db-1635c3dac5ff" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <ownedCommentsInternal>
+    <comment Id="91f005c5-4233-45b9-b27b-60b3c4540efe">
+      <elementDefinition Id="64be58f4-4b84-4a01-a590-d4d5ae736c47" />
+      <annotatedElements>
+        <componentMoniker Id="011dee11-5904-4765-92b8-dea80764c06f" LastKnownName="VkAuth" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="d66bdf1b-d196-4e64-bc24-f8cd31f6dbf2">
+      <profileInstance Id="7fda6d59-1c44-4f51-ade0-f509ed47960f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="bd792641-e26c-4178-8765-475112ee22c3">
+      <profileInstance Id="78676466-6ce5-4cf8-9ce4-a0f28ce2aa21" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="21707346-8fd9-4d4e-b45b-20508755631c" name="VkMethods" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ca9eb2b7-75f1-4256-a6e9-39ef6943f9e0" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="011dee11-5904-4765-92b8-dea80764c06f" name="VkAuth" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="81af850a-5815-4933-bad7-21523d097132" />
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="1dfa7b66-84fa-4e22-b4db-1635c3dac5ff" name="ModelingProject1">
+    <elementDefinition Id="9f585e22-0e2b-4c42-b6f0-eb861c1584f6" />
+  </package>
+</componentModel>
