@@ -3,8 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
-
-
+using VkGUI.ViewModel.MainController;
 
 namespace VkGUI.View
 {
@@ -13,11 +12,12 @@ namespace VkGUI.View
     /// </summary>
     public partial class Main : Window
     {
-        
+        private MainController appController;
         public Main()
         {
             InitializeComponent();
-           
+           appController = new MainController();
+            DataContext = appController;
         }
 
      }

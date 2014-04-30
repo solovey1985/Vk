@@ -15,24 +15,11 @@ namespace VkGUI.UserControlls
     /// </summary>
     public partial class UC_Message : UserControl
     {
-        public UC_Message()
-        {
-            
-            
-            MessageController _controller = new MessageController() ;
-            MessageListViewModel messageViewModel = _controller.Bind() as MessageListViewModel;
-            InitializeComponent();
-            var Data = new { Message = messageViewModel.MessageList[0] };
-            DataContext = Data;
-
-        }
-
+      
         public UC_Message(Message message, User user)
         {
             InitializeComponent();
-            ICommand command = new BaseCommand(s=>MessageBox.Show("sdfsdf"));
-             MessageController _controller = new MessageController() ;
-             var Data = new { Message = message, User = user, Command = command};
+             var Data = new { Message = message, User = user};
           
             DataContext = Data;
         }

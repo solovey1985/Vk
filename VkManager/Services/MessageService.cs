@@ -28,8 +28,8 @@ namespace Vk.DTO.Services
             try{
                 response = api.RunRequest(parameters);
             }
-            catch (Exception){
-                throw new Exception("Невозможно получить ответ от API.");
+            catch (Exception exception){
+                throw new Exception("Невозможно получить ответ от API.", exception);
             }
 
             if (response != null){
@@ -45,16 +45,16 @@ namespace Vk.DTO.Services
             parameters["method"] = "messages.getHistory";
             parameters["uid"] = uid;
             parameters["count"] = count.ToString();
-            parameters["offset"] = "800";
+            parameters["offset"] = "0";
 
             try{
                 response = api.RunRequest(parameters);
                 ParseAnswer();
                 return vkObject;
             }
-            catch (Exception){
+            catch (Exception exception){
 
-                throw new Exception("Невозможно получить ответ от API.");
+                throw new Exception("Невозможно получить ответ от API.", exception);
             }
             
 
@@ -78,6 +78,7 @@ namespace Vk.DTO.Services
                  .ToArray()) 
                  as List<User>;
                         
+            //Происходит маппинг
             messageviewModel.MessageList = messageList;
             messageviewModel.UserList = userList;
             return messageviewModel;

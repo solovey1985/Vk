@@ -16,7 +16,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
         <Frame Grid.Row="1" Source="Pages/MainPage.xaml" DataContext="Dispatcher" NavigationUIVisibility="Automatic"></Frame>
-           <TextBlock Grid.Row="2" Background="Beige" Text="{Binding AccessToken, Mode=Default}"></TextBlock>
+           <TextBlock Grid.Row="2" Background="Beige" Text="{Binding AccessToken, Mode=OneWay}"></TextBlock>
         </Grid>
     </ScrollViewer>
 </Window>
