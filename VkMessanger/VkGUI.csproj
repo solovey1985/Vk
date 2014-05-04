@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BasePage.cs" />
+    <Compile Include="Dispatcher\GUIDispatcher.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\FriendModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="ViewModel\Friends\FriendViewModel.cs" />
     <Compile Include="ViewModel\Login\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainController\MainController.cs" />
+    <Compile Include="ViewModel\Messages\MessageListViewModel.cs" />
     <Compile Include="View\Pages\AudiosPage.xaml.cs">
       <DependentUpon>AudiosPage.xaml</DependentUpon>
     </Compile>
@@ -184,9 +186,7 @@
       <Name>VkModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\Messages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

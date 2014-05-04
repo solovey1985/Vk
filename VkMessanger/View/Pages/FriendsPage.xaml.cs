@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Vk.GUI.Dispatcher;
 using VkGUI.ViewModel.Friends;
 
 namespace VkGUI.View.Pages
@@ -12,8 +13,8 @@ namespace VkGUI.View.Pages
        public FriendsPage()
         {
             InitializeComponent();
-            FriendViewModel friendViewModel = new FriendViewModel();
-            DataContext = friendViewModel;
+            GUIDispatcher dispatcher =new GUIDispatcher();
+            DataContext = dispatcher.LoadData(GetType());
         }
 
     }
