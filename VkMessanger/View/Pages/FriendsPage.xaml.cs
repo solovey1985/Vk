@@ -1,5 +1,7 @@
 ﻿using System.Windows.Controls;
-using VkGUI.ViewModel.Friends;
+using Vk.GUI.ViewModel;
+using VkGUI.ViewModel;
+
 
 namespace VkGUI.View.Pages
 {
@@ -8,12 +10,15 @@ namespace VkGUI.View.Pages
     /// </summary>
     public partial class FriendsPage : Page
     {
+        private FriendsVM viewModel;
+
+        public FriendsVM ViewModel { get { return viewModel; } set { viewModel = value; } }
         
        public FriendsPage()
         {
+            viewModel = new FriendsVM();
             InitializeComponent();
-            FriendViewModel friendViewModel = new FriendViewModel();
-            DataContext = friendViewModel;
+        
         }
 
     }

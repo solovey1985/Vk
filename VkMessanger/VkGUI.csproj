@@ -71,7 +71,8 @@
       <DependentUpon>UC_Message.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Commands\Command.cs" />
-    <Compile Include="ViewModel\Friends\FriendViewModel.cs" />
+    <Compile Include="ViewModel\Friends\FriendsOnlineVM.cs" />
+    <Compile Include="ViewModel\Friends\FriendsVM.cs" />
     <Compile Include="ViewModel\Login\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainController\MainController.cs" />
     <Compile Include="View\Pages\AudiosPage.xaml.cs">

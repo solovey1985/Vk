@@ -1,26 +1,33 @@
-﻿<UserControl x:Class="VkGUI.UserControlls.UC_Friend"
+﻿<UserControl x:Class="Vk.GUI.View.Pages.UC_Friend"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="48" d:DesignWidth="240">
+<StackPanel>
+    
+    <ListBox x:Name="UsersOnlineList" ItemsSource="{Binding Path=UsersOnline}" IsSynchronizedWithCurrentItem="True"/>
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
-       </Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Name="imgUser"></Image>
-            <StackPanel Grid.Column="1">
-            <TextBlock Name="Surname">Surname</TextBlock>
-            <TextBlock Name="Firstname">Firstname</TextBlock>
-                <TextBlock Name="Online">Online</TextBlock>
-            </StackPanel>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Name="imgUser"></Image>
+        <StackPanel Grid.Column="1">
+            <TextBlock Name="Surname" Text="Surname"/>
+            <TextBlock Name="Firstname" Text="Firstname"/>
+            <TextBlock Name="Online" Text="Online"/>
+        </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock>Send message</TextBlock>
             <TextBlock>View news</TextBlock>
             <TextBlock>Say Hello</TextBlock>
         </StackPanel>
+        
     </Grid>
+    </StackPanel>
+
 </UserControl>

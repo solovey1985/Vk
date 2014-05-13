@@ -22,11 +22,41 @@ namespace Vk.DTO.Test
         private static void Main(string[] args)
         {
 
-            LinqTest test = new LinqTest();
-            test.RunRequest();
-           
+            EnumTest t = new EnumTest((ABCD) AB.A);
+            Console.WriteLine(t.name);
             Console.ReadLine();
             }
             
         }
+
+    public class EnumTest
+    {
+        public ABCD name;
+
+        public EnumTest(ABCD n)
+        {
+            this.name = n;
+        }
+    }
+
+    public enum ABCD
+    {
+        A,
+        B,
+        C,
+        D,
+    }
+
+    public enum AB
+    {
+        A,
+        B,
+    }
+
+    public enum CD
+    {
+        C,
+        D,
+    }
+
     }

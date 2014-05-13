@@ -14,18 +14,21 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VkGUI.Model;
 
-namespace VkGUI.UserControlls
+namespace Vk.GUI.View.Pages
 {
     /// <summary>
     /// Interaction logic for UC_Friend.xaml
     /// </summary>
     public partial class UC_Friend : UserControl
     {
+        public UC_Friend()
+        {
+            InitializeComponent();
+        }
         public UC_Friend(FriendModel friend)
         {
             InitializeComponent();
-            Surname.Text = friend.Surname;
-            Firstname.Text = friend.Name;
+           
             
         }
     }
