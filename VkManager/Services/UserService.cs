@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Vk.DTO.Domain;
 using Vk.DTO.Services.Parser;
 using Vk.Interfaces.Services;
@@ -6,7 +7,7 @@ using Vk.Interfaces.ViewModels;
 
 namespace Vk.DTO.Services
 {
-    internal class UserService : VkService, IUserService
+    public class UserService : VkService, IUserService
     {
         public IEnumerable<VkModel> usersGet(string[] usersId)
         {
@@ -32,6 +33,24 @@ namespace Vk.DTO.Services
             
             return vkObject;
         }
+
+        public IEnumerable<VkModel> GetFriendsOnline()
+        {
+            ClearParameters();
+            parameters["method"] = "friends.getOnline";
+            response = api.RunRequest(parameters);
+            ParseAnswer();
+            List<User> usersOnLine = new List<User>();
+            foreach (VkModel model in vkObject){
+
+                usersOnLine.Add(
+                    (
+                    friendsGet(((User) model).Uid)).First() as User);
+            }
+           
+            return usersOnLine;
+        }
+
 
         /// <summary>
         ///     Формирование строчки ID пользователей

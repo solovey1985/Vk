@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DomainTests</RootNamespace>
     <AssemblyName>DomainTests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,8 +35,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\tfs\Mainline\3rdPartyLibs\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -53,8 +60,41 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VkApi\VkApi.csproj">
+      <Project>{82580eca-681a-422c-8dfb-e89bcb851abf}</Project>
+      <Name>VkApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkAuth\VkAuth.csproj">
+      <Project>{877aa5ea-bff3-4ea2-8b84-2de85e7006b1}</Project>
+      <Name>VkAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkController\VkControllers.csproj">
+      <Project>{c68f2269-efb5-45fa-87ae-d4e40943c8b8}</Project>
+      <Name>VkControllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkInterfaces\VkInterfaces.csproj">
+      <Project>{1c717e7d-fe26-406f-b635-4adf4de6da5e}</Project>
+      <Name>VkInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkManager\VkServices.csproj">
+      <Project>{5add89f5-36e0-4676-8646-b3b00b9f366f}</Project>
+      <Name>VkServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkObjects\VkModels.csproj">
+      <Project>{c5ec8e30-2c34-48e5-8fdb-f69a4f40bd75}</Project>
+      <Name>VkModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkUtillites\VkUtillites.csproj">
+      <Project>{d1051876-4fed-40a5-8408-5d07d12ccad3}</Project>
+      <Name>VkUtillites</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

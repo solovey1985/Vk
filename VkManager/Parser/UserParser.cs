@@ -10,7 +10,7 @@ namespace Vk.DTO.Services.Parser
         {
             List<User> userList = new List<User>();
             XmlNodeList usersNodes = response.SelectNodes("//user");
-            if (usersNodes != null){
+            if (usersNodes.Count > 0){
                 foreach (XmlNode node in usersNodes){
                     User user = new User();
 
@@ -25,6 +25,16 @@ namespace Vk.DTO.Services.Parser
 
                     userList.Add(user);
                 }
+            }
+            else{
+                 usersNodes = response.SelectNodes("//uid");
+                 foreach (XmlNode node in usersNodes)
+                 {
+                     User user = new User();
+
+                     user.Uid = node.InnerText;
+                     userList.Add(user);
+                 }
             }
             return userList;
         }
