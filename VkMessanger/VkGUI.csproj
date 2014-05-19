@@ -93,12 +93,12 @@
       <DependentUpon>MessagesPage.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControlls\UC_Friend.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlls\UC_Message.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Main.xaml">
       <Generator>MSBuild:Compile</Generator>

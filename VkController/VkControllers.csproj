@@ -63,6 +63,10 @@
       <Project>{5add89f5-36e0-4676-8646-b3b00b9f366f}</Project>
       <Name>VkServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VkObjects\VkModels.csproj">
+      <Project>{c5ec8e30-2c34-48e5-8fdb-f69a4f40bd75}</Project>
+      <Name>VkModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

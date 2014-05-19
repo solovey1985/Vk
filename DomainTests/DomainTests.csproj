@@ -55,10 +55,15 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="UserControllerTest.cs" />
     <Compile Include="UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{3a88c782-ca74-468b-99fa-60c3b5482e9a}</Project>
+      <Name>ViewModels %28ViewModels\ViewModels%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VkApi\VkApi.csproj">
       <Project>{82580eca-681a-422c-8dfb-e89bcb851abf}</Project>
       <Name>VkApi</Name>

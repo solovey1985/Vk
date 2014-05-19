@@ -3,31 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="48" d:DesignWidth="240">
-<StackPanel>
-    
-    <ListBox x:Name="UsersOnlineList" ItemsSource="{Binding Path=UsersOnline}" IsSynchronizedWithCurrentItem="True"/>
+             mc:Ignorable="d"
+             d:DesignHeight="80" d:DesignWidth="240">
+
+   
+ <UserControl.Resources>
+     <Style x:Key="UCFriendStyle">
+        <Setter Property="Control.Margin" Value="5 5"/>
+           
+     </Style>
+     <DataTemplate x:Key="UserItemTemplate">
+  
     <Grid>
-        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
+            <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
+            <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Name="imgUser"></Image>
-        <StackPanel Grid.Column="1">
-            <TextBlock Name="Surname" Text="Surname"/>
-            <TextBlock Name="Firstname" Text="Firstname"/>
-            <TextBlock Name="Online" Text="Online"/>
+                <Image Grid.Column="0" Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
+        <StackPanel Grid.Column="1" Style="{StaticResource UCFriendStyle}">
+                    <TextBlock Name="Surname" Text="{Binding Path=First_name}"/>
+                    <TextBlock Name="Firstname" Text="{Binding Path=Last_name}"/>
+                    <TextBlock Name="Online" Text="{Binding Path=Online}"/>
         </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock>Send message</TextBlock>
-            <TextBlock>View news</TextBlock>
-            <TextBlock>Say Hello</TextBlock>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Margin="0 2">Send message</Button>
+            <Button Margin="0 2">View news</Button>
+            <Button Margin="0 2">Say Hello</Button>
         </StackPanel>
         
     </Grid>
-    </StackPanel>
-
+         
+        </DataTemplate>
+    </UserControl.Resources>
+    <ListBox x:Name="UsersOnlineList" 
+             ItemsSource="{Binding Path=UsersOnline}" 
+             IsSynchronizedWithCurrentItem="True"
+             ItemTemplate="{StaticResource UserItemTemplate}"
+             />
 </UserControl>

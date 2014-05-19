@@ -5,15 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VkGUI.Model;
-
+using  Vk.DTO.Controllers;
 namespace Vk.GUI.View.Pages
 {
     /// <summary>
@@ -21,9 +14,13 @@ namespace Vk.GUI.View.Pages
     /// </summary>
     public partial class UC_Friend : UserControl
     {
+        private UserController _controller;
         public UC_Friend()
         {
             InitializeComponent();
+            _controller = new UserController();
+            //Связываем с ViewModel FriendsOnlineVM
+            DataContext = _controller.LoadUsersOnlineViewModel();
         }
         public UC_Friend(FriendModel friend)
         {
