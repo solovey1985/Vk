@@ -9,7 +9,7 @@
    
  <UserControl.Resources>
      <Style x:Key="UCFriendStyle">
-        <Setter Property="Control.Margin" Value="5 5"/>
+        <Setter Property="Control.Margin" Value="10 5"/>
            
      </Style>
      <DataTemplate x:Key="UserItemTemplate">
