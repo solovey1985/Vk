@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
+using Castle.Components.DictionaryAdapter;
 using Vk.DTO.Domain;
 using Vk.DTO.Services.Parser;
 using Vk.Interfaces.Services;
@@ -9,6 +11,7 @@ namespace Vk.DTO.Services
 {
     public class UserService : VkService, IUserService
     {
+        
         public IEnumerable<VkModel> usersGet(string[] usersId)
         {
             ClearParameters();
@@ -34,55 +37,22 @@ namespace Vk.DTO.Services
             return vkObject;
         }
 
-        public IEnumerable<VkModel> GetFriendsOnline()
+        public IEnumerable<VkModel> friendsGetOnline()
         {
             ClearParameters();
             parameters["method"] = "friends.getOnline";
             response = api.RunRequest(parameters);
             ParseAnswer();
-            List<User> usersOnLine = new List<User>();
-            foreach (VkModel model in vkObject){
 
-                usersOnLine.Add(
-                    (
-                    friendsGet(((User) model).Uid)).First() as User);
-            }
-           
-            return usersOnLine;
+            List<User> usersOnLine = getFriendsOnlineIds().ToList();
+            string[] userIds = usersOnLine.Select(i=>i.Uid).ToArray();
+            IEnumerable<User> users = (IEnumerable<User>) usersGet(userIds);             
+            return users;
         }
 
 
-        /// <summary>
-        ///     Формирование строчки ID пользователей
-        /// </summary>
-        /// <param name="usersId"></param>
-        /// <returns></returns>
-        private string setUsersIds(string[] usersId)
-        {
-            string uids = string.Empty;
-            
-            for (int i = 0; i < usersId.Length; i++){
-                uids += usersId[i];
-                if (i < usersId.Length - 1)
-                    uids += ",";
-            }
-            
-            return uids;
-        }
-
-        /// <summary>
-        ///     Формирование строки полей информации о пользователях
-        /// </summary>
-        /// <returns></returns>
-        private string getUserFields()
-        {
-            string userFields = string.Empty;
-            userFields =
-                "uid, first_name, last_name, last_seen, counters, nickname, relation, sex, birthdate, city, country, timezone, photo, photo_big, photo_rec, photo_50, online";
-            
-            return userFields;
-        }
-
+        
+        
         internal override void ParseAnswer()
         {
             parser = new UserParser();
@@ -94,5 +64,53 @@ namespace Vk.DTO.Services
         {
             return viewModel;
         }
+
+
+        #region Private Methods
+        /// <summary>
+        ///     Формирование строки полей информации о пользователях
+        /// </summary>
+        /// <returns></returns>
+        private string getUserFields()
+        {
+            string userFields = string.Empty;
+            userFields =
+                "uid, first_name, last_name, last_seen, counters, nickname, relation, sex, birthdate, city, country, timezone, photo, photo_big, photo_rec, photo_50, online";
+
+            return userFields;
+        }
+
+        /// <summary>
+        ///     Формирование строчки ID пользователей
+        /// </summary>
+        /// <param name="usersId"></param>
+        /// <returns></returns>
+        private string setUsersIds(string[] usersId)
+        {
+            string uids = string.Empty;
+
+            for (int i = 0; i < usersId.Length; i++)
+            {
+                uids += usersId[i];
+                if (i < usersId.Length - 1)
+                    uids += ",";
+            }
+
+            return uids;
+        }
+
+        private IEnumerable<User> getFriendsOnlineIds(){
+            IEnumerable<User> userListWithId = new List<User>();
+
+            parameters.Clear();
+            parameters["method"] = "friends.getOnline";
+            XmlDocument resp = api.RunRequest(parameters);
+            UserParser parser = new UserParser();
+            parser.SetResponse(resp);
+            userListWithId = parser.ParseResponse() as IEnumerable<User>;
+            return userListWithId;
+        }
+
+        #endregion
     }
 }

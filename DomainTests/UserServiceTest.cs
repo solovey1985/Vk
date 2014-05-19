@@ -16,7 +16,7 @@ namespace DomainTests
         [TestFixtureSetUp]
         public void SetUp()
         {
-            _service = new UserService();            
+                     
         }
 
         [TestFixtureTearDown]
@@ -30,11 +30,12 @@ namespace DomainTests
         public void GetUsersOnlineTest_ValidData_Success()
         {
             //Arrange
-
+            _service = new UserService();
             //Act
-            IEnumerable<User> result = _service.GetFriendsOnline() as IEnumerable<User>;
+            IEnumerable<User> result = _service.friendsGetOnline() as IEnumerable<User>;
             //Assert
-           Assert.IsTrue(result.Count()>0);
+           Assert.NotNull(result);
+           Assert.Greater( result.Count(),0);
         }
     }
 }

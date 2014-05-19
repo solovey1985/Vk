@@ -71,12 +71,12 @@
     <Compile Include="UserControlls\UC_Message.xaml.cs">
       <DependentUpon>UC_Message.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Commands\Command.cs" />
-    <Compile Include="ViewModel\Friends\FriendsOnlineVM.cs" />
-    <Compile Include="ViewModel\Friends\FriendsVM.cs" />
-    <Compile Include="ViewModel\Login\LoginViewModel.cs" />
-    <Compile Include="ViewModel\MainController\MainController.cs" />
-    <Compile Include="ViewModel\Messages\MessageListViewModel.cs" />
+    <Compile Include="View\ViewModel\Commands\Command.cs" />
+    <Compile Include="View\ViewModel\Friends\FriendsOnlineVM.cs" />
+    <Compile Include="View\ViewModel\Friends\FriendsVM.cs" />
+    <Compile Include="View\ViewModel\Login\LoginViewModel.cs" />
+    <Compile Include="View\ViewModel\MainController\MainController.cs" />
+    <Compile Include="View\ViewModel\Messages\MessageListViewModel.cs" />
     <Compile Include="View\Pages\AudiosPage.xaml.cs">
       <DependentUpon>AudiosPage.xaml</DependentUpon>
     </Compile>
