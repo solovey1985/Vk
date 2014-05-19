@@ -12,11 +12,12 @@ namespace Vk.DTO.Controllers
 {
     public class UserController: VkController
     {
+        private MessageService messageService;
 
         public FriendsOnlineVM LoadUsersOnlineViewModel()
         {
            UserService _service = new UserService();
-
+            
 
            
 
@@ -27,7 +28,8 @@ namespace Vk.DTO.Controllers
             foreach (User user in users){
                 viewModel.UsersOnline.Add(user);    
             }
-             
+            
+           
             
             return viewModel;
 

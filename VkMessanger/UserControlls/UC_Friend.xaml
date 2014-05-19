@@ -20,13 +20,16 @@
             <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
             <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
+        
+        <Image Grid.Column="0" Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
+        
         <StackPanel Grid.Column="1" Style="{StaticResource UCFriendStyle}">
                     <TextBlock Name="Surname" Text="{Binding Path=First_name}"/>
                     <TextBlock Name="Firstname" Text="{Binding Path=Last_name}"/>
                     <TextBlock Name="Online" Text="{Binding Path=Online}"/>
         </StackPanel>
-                <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
+        
+        <StackPanel Grid.Column="2" HorizontalAlignment="Stretch" Orientation="Vertical">
             <Button Margin="0 2">Send message</Button>
             <Button Margin="0 2">View news</Button>
             <Button Margin="0 2">Say Hello</Button>

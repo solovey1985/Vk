@@ -15,7 +15,7 @@ namespace Vk.DTO.Services
     In = 0,
     Out = 1
 }
-    class MessageService: VkService, IMessageService
+    public class MessageService: VkService, IMessageService
     {
         public IEnumerable<VkModel> messagesGet(int count, MessageDirection messageDirection)
         {
@@ -83,6 +83,11 @@ namespace Vk.DTO.Services
             messageviewModel.UserList = userList;
             return messageviewModel;
 
+        }
+
+        public void messageSent()
+        {
+            throw new NotImplementedException();
         }
     }
 }
