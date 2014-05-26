@@ -79,8 +79,7 @@ namespace Vk.DTO.Services
                  as List<User>;
                         
             //Происходит маппинг
-            messageviewModel.MessageList = messageList;
-            messageviewModel.UserList = userList;
+          
             return messageviewModel;
 
         }
@@ -89,5 +88,7 @@ namespace Vk.DTO.Services
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

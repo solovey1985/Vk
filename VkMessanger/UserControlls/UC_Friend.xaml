@@ -39,9 +39,11 @@
          
         </DataTemplate>
     </UserControl.Resources>
-    <ListBox x:Name="UsersOnlineList" 
+    <Grid>
+    <ListBox x:Name="UsersOnlineList"  
              ItemsSource="{Binding Path=UsersOnline}" 
              IsSynchronizedWithCurrentItem="True"
              ItemTemplate="{StaticResource UserItemTemplate}"
              />
+   </Grid> 
 </UserControl>

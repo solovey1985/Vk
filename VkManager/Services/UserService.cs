@@ -49,9 +49,6 @@ namespace Vk.DTO.Services
             IEnumerable<User> users = (IEnumerable<User>) usersGet(userIds);             
             return users;
         }
-
-
-        
         
         internal override void ParseAnswer()
         {

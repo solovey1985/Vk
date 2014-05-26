@@ -17,13 +17,12 @@ namespace Vk.DTO.ViewModels
         public BaseCommand DeleteMessageCommand;
         public BaseCommand SendMessageCommand;
 
-        public List<Message> MessageList { get; set; }
-        public List<User> UserList { get; set;}
-        public string Message { get; set; }
+        public ObservableCollection<MessageViewModel> MessageVMList { get;set; }
+       
         
         public MessageListViewModel()
         {
-            
+            MessageVMList = new ObservableCollection<MessageViewModel>();
         }
         
     }

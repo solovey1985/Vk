@@ -4,17 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      x:Name="MyFriendsPage"
+      WindowTitle="Мои друзья"
          
+      x:Name="MyFriendsPage"
       xmlns:view="clr-namespace:Vk.GUI.View.Pages"   
-      xmlns:viewModel ="clr-namespace:Vk.GUI.ViewModel" 
+      xmlns:viewModel ="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels" 
          
       DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
       mc:Ignorable="d" 
          
       d:DesignHeight="300" d:DesignWidth="300"
-	       Title="Friends"
-        KeepAlive="False">
+	       >
 <!-- ! -->    
     <Page.Resources>
         <DataTemplate DataType="{x:Type viewModel:FriendsOnlineVM}">
@@ -41,17 +41,13 @@
     <StackPanel Grid.Column="1">
             <!-- ! -->
             <TabControl 
-                    HorizontalAlignment="Stretch" 
+                    HorizontalAlignment="Left" 
                     Name="Tabs" 
-                    VerticalAlignment="Stretch"
-                   
-                   
-            
+                    VerticalAlignment="Top"
             >
                 <!-- ! -->
                 <TabItem Height="20" Header="Online" Name="FriendsOnlineTab" Content="{Binding Path=FriendsOnlineVM}"/>
-                <TabItem Height="20" Header="Friends" Name="AllFriendsTab" Content="{Binding Path=FriendsOnlineVM}"/>
-
+               
             </TabControl>
 
         </StackPanel>

@@ -18,17 +18,6 @@ namespace VkGUI.View.Pages
     {
         public MessagesPage(){
            InitializeComponent();
-            MessageController _controller = new MessageController();
-            MessageListViewModel viewModel = _controller.Bind() as MessageListViewModel;
-            
-            foreach (Message message in viewModel.MessageList){
-                
-                UC_Message messageView = new UC_Message(message, viewModel.UserList.Find(x=>x.Uid==message.Uid)); 
-                
-                messageContainer.Children.Add(messageView);
-            }
-            
-
-        }
+          }
     }
 }

@@ -23,5 +23,7 @@ namespace VkGUI.UserControlls
           
             DataContext = Data;
         }
+
+        public UC_Message(MessageListViewModel viewModel) { InitializeComponent(); }
     }
 }

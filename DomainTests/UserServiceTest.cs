@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using Vk.DTO.Controllers;
 using Vk.DTO.Domain;
 using Vk.DTO.Services;
-
+using Vk.DTO.ViewModels;
 
 namespace DomainTests
 {
@@ -16,7 +17,7 @@ namespace DomainTests
         [TestFixtureSetUp]
         public void SetUp()
         {
-                     
+            _service = new UserService();         
         }
 
         [TestFixtureTearDown]
@@ -30,12 +31,27 @@ namespace DomainTests
         public void GetUsersOnlineTest_ValidData_Success()
         {
             //Arrange
-            _service = new UserService();
+            
+            _service.Authorize("solovey1985@ukr.net", "Dhjnvytyjub1");
             //Act
             IEnumerable<User> result = _service.friendsGetOnline() as IEnumerable<User>;
             //Assert
            Assert.NotNull(result);
            Assert.Greater( result.Count(),0);
+        }
+
+        [Test]
+        public void Test_GetUsersOnLineViewModel()
+        {
+
+            //Arrange
+            UserController _controller = new UserController();
+            FriendsVM friendsVm = new FriendsVM();
+            //Act
+            friendsVm = _controller.LoadUsersOnlineViewModel();
+            //Assert
+            Assert.NotNull(friendsVm.FriendsOnlineVM.UsersOnline[0]);
+            Assert.Greater(friendsVm.FriendsOnlineVM.UsersOnline.Count, 0);
         }
     }
 }

@@ -5,9 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignWidth="180"
-             
              >
-    <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" Background="LightBlue">
+ <UserControl.Resources>
+   <DataTemplate x:Key="MessageItemTemplate">
+       
+   
+
+            <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" Background="LightBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="2*"/>
@@ -48,4 +52,14 @@
         </StackPanel>
 
     </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <ListBox
+        x:Name="MessagesListBox"
+        ItemsSource="{Binding Path=MessageList}"
+        IsSynchronizedWithCurrentItem="True"
+        ItemTemplate="{StaticResource MessageItemTemplate}"
+        ></ListBox>
+    
 </UserControl>

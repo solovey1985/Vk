@@ -7,7 +7,7 @@ using Vk.Interfaces.ViewModels;
 
 namespace Vk.DTO.ViewModels
 {
-    class MessageViewModel: ViewModel
+    public class MessageViewModel: ViewModel
     {
         public BaseCommand DeleteMessage { get; set; }
         public BaseCommand SendMessage { get; set; }

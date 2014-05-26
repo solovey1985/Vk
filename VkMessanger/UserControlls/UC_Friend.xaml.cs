@@ -14,19 +14,11 @@ namespace Vk.GUI.View.Pages
     /// </summary>
     public partial class UC_Friend : UserControl
     {
-        private UserController _controller;
+
+       
         public UC_Friend()
         {
             InitializeComponent();
-            _controller = new UserController();
-            //Связываем с ViewModel FriendsOnlineVM
-            DataContext = _controller.LoadUsersOnlineViewModel();
-        }
-        public UC_Friend(FriendModel friend)
-        {
-            InitializeComponent();
-           
-            
-        }
+       }
     }
 }

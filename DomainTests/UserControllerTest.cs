@@ -8,7 +8,7 @@ namespace DomainTests
     public class UserControllerTest
     {
         private UserController _controller;
-        private FriendsOnlineVM _viewModel;
+        private FriendsVM _viewModel;
 
         [TestFixtureSetUp]
         private void SetUp()
@@ -25,7 +25,7 @@ namespace DomainTests
             _viewModel = _controller.LoadUsersOnlineViewModel();
             //Assert
             Assert.NotNull(_viewModel);
-            Assert.NotNull(_viewModel.UsersOnline);
+            Assert.NotNull(_viewModel.FriendsOnlineVM.UsersOnline);
 
         }
     }

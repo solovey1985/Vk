@@ -3,10 +3,21 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      x:Name="MyMessagePage"
       xmlns:vkGui="clr-namespace:VkGUI"
+      xmlns:viewModel="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels"
+      xmlns:userControlls="clr-namespace:VkGUI.UserControlls"
+      xmlns:ViewModel="clr-namespace:Vk.GUI.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="MessagesPage" WindowTitle="Мои Сообщения">
+	       Title="MessagesPage" WindowTitle="Мои Сообщения"
+        DataContext="{Binding ViewModel, ElementName=MyMessagePage}"
+      >
+    <Page.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:MessageListViewModel}">
+            <userControlls:UC_Message/>
+        </DataTemplate>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -31,20 +42,10 @@
 
         </StackPanel>
     </StackPanel>
-        
-        <StackPanel  x:Name="messageContainer" 
-                     Grid.Column="1"
-                     Grid.Row="0"
-                     HorizontalAlignment="Stretch" 
-                     VerticalAlignment="Top" 
-                     Orientation="Vertical"
-                     CanVerticallyScroll="False"
-                     CanHorizontallyScroll="True"
-                     >
-           
-                
-            
-        </StackPanel>
+             <TabPanel Grid.Column="1" Grid.Row="0">
+                 <TabItem ></TabItem>
+             </TabPanel>   
+
         
        </Grid>
 </Page>

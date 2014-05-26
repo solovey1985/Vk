@@ -14,7 +14,7 @@ namespace Vk.DTO.Controllers
     {
         private MessageService messageService;
 
-        public FriendsOnlineVM LoadUsersOnlineViewModel()
+        public FriendsVM LoadUsersOnlineViewModel()
         {
            UserService _service = new UserService();
             
@@ -23,10 +23,10 @@ namespace Vk.DTO.Controllers
 
             List<User> users = _service.friendsGetOnline() as List<User>;
 
-            FriendsOnlineVM viewModel = new FriendsOnlineVM();
+            FriendsVM viewModel = new FriendsVM();
 
             foreach (User user in users){
-                viewModel.UsersOnline.Add(user);    
+                viewModel.FriendsOnlineVM.UsersOnline.Add(user);    
             }
             
            
