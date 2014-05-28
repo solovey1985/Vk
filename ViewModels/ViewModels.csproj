@@ -42,13 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\Messages\IMessagePage.cs" />
     <Compile Include="ViewModels\Messages\MessageListViewModel.cs" />
     <Compile Include="ViewModels\Messages\MessageViewModel.cs" />
     <Compile Include="ViewModels\Users\FriendsOnlineVM.cs" />
     <Compile Include="ViewModels\Users\FriendsVM.cs" />
     <Compile Include="ViewModels\Messages\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Users\IFriendsPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VkInterfaces\VkInterfaces.csproj">

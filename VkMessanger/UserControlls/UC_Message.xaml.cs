@@ -8,22 +8,14 @@ using Vk.DTO.ViewModels;
 using Vk.Interfaces.Controllers;
 using Vk.Interfaces.ViewModels;
 using Vk.DTO.Controllers;
-namespace VkGUI.UserControlls
+namespace Vk.GUI.UserControlls
 {
     /// <summary>
     /// Interaction logic for UC_Message.xaml
     /// </summary>
     public partial class UC_Message : UserControl
     {
-      
-        public UC_Message(Message message, User user)
-        {
-            InitializeComponent();
-             var Data = new { Message = message, User = user};
-          
-            DataContext = Data;
-        }
-
-        public UC_Message(MessageListViewModel viewModel) { InitializeComponent(); }
+       
+        public UC_Message() { InitializeComponent(); }
     }
 }

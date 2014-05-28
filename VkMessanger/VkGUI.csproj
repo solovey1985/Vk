@@ -71,6 +71,9 @@
     <Compile Include="UserControlls\UC_Message.xaml.cs">
       <DependentUpon>UC_Message.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewModel\Commands\Command.cs" />
     <Compile Include="View\ViewModel\Login\LoginViewModel.cs" />
     <Compile Include="View\ViewModel\MainController\MainController.cs" />
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\MessagesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

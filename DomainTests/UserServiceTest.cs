@@ -40,18 +40,6 @@ namespace DomainTests
            Assert.Greater( result.Count(),0);
         }
 
-        [Test]
-        public void Test_GetUsersOnLineViewModel()
-        {
-
-            //Arrange
-            UserController _controller = new UserController();
-            FriendsVM friendsVm = new FriendsVM();
-            //Act
-            friendsVm = _controller.LoadUsersOnlineViewModel();
-            //Assert
-            Assert.NotNull(friendsVm.FriendsOnlineVM.UsersOnline[0]);
-            Assert.Greater(friendsVm.FriendsOnlineVM.UsersOnline.Count, 0);
-        }
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using Castle.Components.DictionaryAdapter;
@@ -25,10 +26,11 @@ namespace Vk.DTO.Services
             return vkObject;
         }
 
-        public IEnumerable<VkModel> friendsGet(string userId)
+        public IEnumerable<VkModel> friendsGet(string userId="")
         {
             ClearParameters();
-            parameters["method"] = "getProfiles";
+            parameters["method"] = "friends.get";
+            if (!String.IsNullOrEmpty(userId))
             parameters["uids"] = userId;
 
             response = api.RunRequest(parameters);

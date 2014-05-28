@@ -13,7 +13,10 @@ namespace DomainTests
         [TestFixtureSetUp]
         public void SetUp()
         {
-            messageController = new MessageController();           
+
+            messageController = new MessageController();
+            
+               
         }
 
         [Test]
@@ -21,10 +24,12 @@ namespace DomainTests
         {
             //Arrange
             MessageListViewModel messageListVM =new MessageListViewModel();
+            messageController.Login("solovey1985@ukr.net","Dhjnvytyjub1");
             //Act
             messageListVM = messageController.LoadMessageListViewModel();
             //Assert
-            Assert.NotNull(messageListVM.MessageVMList);
+            Assert.NotNull(messageListVM.MessageVMList.Messages);
+            Assert.Greater(messageListVM.MessageVMList.Messages.Count, 0);
 
         }
     }

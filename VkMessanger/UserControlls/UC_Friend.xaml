@@ -8,40 +8,45 @@
 
    
  <UserControl.Resources>
-     <Style x:Key="UCFriendStyle">
-        <Setter Property="Control.Margin" Value="10 5"/>
-           
+     <Style x:Key="FriendsStyle">
+         <Setter Property="Control.Background" Value="LightBlue"></Setter>
      </Style>
+     <Style x:Key="UCFriendStyle">
+        <Setter Property="Control.Margin" Value="2 0"/>
+     </Style>
+     <Style x:Key="ButtonStyle" TargetType="Button">
+         <Setter Property="Button.Height" Value="20"></Setter>
+         <Setter Property="FontSize" Value="10"></Setter>
+     </Style>
+
      <DataTemplate x:Key="UserItemTemplate">
-  
-    <Grid>
+    <Grid HorizontalAlignment="Stretch" Style="{StaticResource FriendsStyle}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
-            <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
-            <ColumnDefinition Width="2*" Style="{StaticResource UCFriendStyle}"></ColumnDefinition>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <Image Grid.Column="0" Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
-        
-        <StackPanel Grid.Column="1" Style="{StaticResource UCFriendStyle}">
-                    <TextBlock Name="Surname" Text="{Binding Path=First_name}"/>
-                    <TextBlock Name="Firstname" Text="{Binding Path=Last_name}"/>
-                    <TextBlock Name="Online" Text="{Binding Path=Online}"/>
+        <StackPanel Grid.Column="0">
+            <Image  Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Width="200" Style="{StaticResource UCFriendStyle}">
+            <TextBlock Name="Surname" Text="{Binding Path=First_name}"/>
+            <TextBlock Name="Firstname" Text="{Binding Path=Last_name}"/>
+            <TextBlock Name="Online" Text="{Binding Path=Online}"/>
         </StackPanel>
         
-        <StackPanel Grid.Column="2" HorizontalAlignment="Stretch" Orientation="Vertical">
-            <Button Margin="0 2">Send message</Button>
-            <Button Margin="0 2">View news</Button>
-            <Button Margin="0 2">Say Hello</Button>
+        <StackPanel Grid.Column="2">
+            <Button Margin="0 1" Style="{StaticResource ButtonStyle}">Send message</Button>
+            <Button Margin="0 1" Style="{StaticResource ButtonStyle}">View news</Button>
+            <Button Margin="0 1" Style="{StaticResource ButtonStyle}">Say Hello</Button>
         </StackPanel>
-        
     </Grid>
-         
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
     <ListBox x:Name="UsersOnlineList"  
-             ItemsSource="{Binding Path=UsersOnline}" 
+             ItemsSource="{Binding Path=Friends}" 
              IsSynchronizedWithCurrentItem="True"
              ItemTemplate="{StaticResource UserItemTemplate}"
              />

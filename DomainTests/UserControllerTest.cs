@@ -25,7 +25,7 @@ namespace DomainTests
             _viewModel = _controller.LoadUsersOnlineViewModel();
             //Assert
             Assert.NotNull(_viewModel);
-            Assert.NotNull(_viewModel.FriendsOnlineVM.UsersOnline);
+
 
         }
     }

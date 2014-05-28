@@ -16,20 +16,29 @@ namespace Vk.DTO.Controllers
 
         public FriendsVM LoadUsersOnlineViewModel()
         {
-           UserService _service = new UserService();
+            UserService _service = new UserService();
             
+            List<User> usersOnline = _service.friendsGetOnline() as List<User>;
+            
+            FriendsOnlineVM onlineFriends = new FriendsOnlineVM(){Name = "Online"};
 
-           
+            foreach (User user in usersOnline)
+            {
+                onlineFriends.Friends.Add(user);                   
+            }
 
-            List<User> users = _service.friendsGetOnline() as List<User>;
+            List<User> users = _service.friendsGet() as List<User>;
+
+            FriendsOnlineVM friends = new FriendsOnlineVM() { Name = "Friends" };
+
+            foreach (User user in users)
+            {
+                friends.Friends.Add(user);
+            }
 
             FriendsVM viewModel = new FriendsVM();
-
-            foreach (User user in users){
-                viewModel.FriendsOnlineVM.UsersOnline.Add(user);    
-            }
-            
-           
+            viewModel.Pages.Add(onlineFriends);
+            viewModel.Pages.Add(friends);            
             
             return viewModel;
 
