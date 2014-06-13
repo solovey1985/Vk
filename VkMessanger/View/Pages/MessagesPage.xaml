@@ -39,10 +39,11 @@
         <StackPanel Grid.Column="1">
             <!-- ! -->
             <TabControl 
-                    ItemsSource="{Binding Pages}"
+                    ItemsSource="{Binding Pages, IsAsync=True}"
                     HorizontalAlignment="Left" 
                     Name="Tabs" 
                     VerticalAlignment="Top"
+                    SelectedIndex="0"
             >
                 <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">

@@ -28,23 +28,23 @@
                 <GridSplitter Grid.Column="1" Grid.RowSpan="2" Width="2" VerticalAlignment="Stretch" HorizontalAlignment="Left"></GridSplitter>
                 <GridSplitter Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Height="2" VerticalAlignment="Top" HorizontalAlignment="Stretch"></GridSplitter>
                 <!-- ДРУЗЬЯ -->
-                <Grid  Column="0" Row="0" Background="CadetBlue" MouseUp="Hyperlink_OnClick" x:Name="grFriends">
-                    <TextBlock Name="txblFrineds"><Hyperlink NavigateUri="FriendsPage.xaml"></Hyperlink></TextBlock>
+                <Grid  Column="0" Row="0" Background="CadetBlue"  Control.PreviewMouseUp="Hyperlink_OnClick" x:Name="grFriends">
+                    <TextBlock Name="txblFriends"><Hyperlink NavigateUri="FriendsPage.xaml"></Hyperlink></TextBlock>
                 </Grid>
                 <!-- АУДИО -->
-                <Grid Column="0" Row="1" Background="DeepSkyBlue"
+                <Grid Column="0" Row="1" Background="DeepSkyBlue" Control.PreviewMouseUp="Hyperlink_OnClick"
                   x:Name="grAudio">
-                    <TextBlock><Hyperlink NavigateUri="AudiosPage.xaml">Music</Hyperlink></TextBlock>
+                    <TextBlock Name="txblAudios"><Hyperlink NavigateUri="AudiosPage.xaml">Music</Hyperlink></TextBlock>
                 </Grid>
                 <!-- СООБЩЕНИЯ -->
-                <Grid Column="1" Row="0" Background="LightSkyBlue"
+                <Grid Column="1" Row="0" Background="LightSkyBlue"  Control.PreviewMouseUp="Hyperlink_OnClick" 
                   x:Name="grMessages">
-                    <TextBlock><Hyperlink NavigateUri="MessagesPage.xaml">Messages</Hyperlink></TextBlock>
+                    <TextBlock Name="txblMessages">Messages</TextBlock>
                 </Grid>
-                <!-- ПУСТАЯ (ФОТО) -->
-                <Grid x:Name="grLogin" Column="1" Row="1" Background="LightSteelBlue" MouseUp="GrLogin_OnMouseUp" >
+                <!-- Login-->
+                <Grid x:Name="grLogin" Column="1" Row="1" Background="LightSteelBlue" PreviewMouseUp="Hyperlink_OnClick" >
                 <DockPanel>
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"> Login </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="txblLogin"> Login </TextBlock>
                 </DockPanel>
                 </Grid>
 

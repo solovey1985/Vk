@@ -20,7 +20,7 @@ namespace DomainTests
         public void Test_ViewModel_Load()
         {
             //Arrange
-
+            _controller.Login("solovey1985@ukr.net", "Dhjnvytyjub1");
             //Act
             _viewModel = _controller.LoadUsersOnlineViewModel();
             //Assert

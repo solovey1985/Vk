@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Vk.GUI.Dispatcher;
 
 namespace VkGUI.View.Pages
 {
@@ -15,13 +17,38 @@ namespace VkGUI.View.Pages
            InitializeComponent();
         }
 
-        private void Hyperlink_OnClick(object sender, RoutedEventArgs e){
-            NavigationService.Navigate(new Uri(@"View\Pages\FriendsPage.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void GrLogin_OnMouseUp(object sender, MouseButtonEventArgs e)
+        private async void Hyperlink_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri(@"View\Pages\LoginPage.xaml", UriKind.RelativeOrAbsolute));
+
+            MouseEventArgs m = e as MouseEventArgs;
+            GUIDispatcher dispatcher = new GUIDispatcher();
+            FrameworkElement source = sender as FrameworkElement;
+
+            switch (source.Name){
+
+            case "grFriends":
+                {NavigationService.Navigate(dispatcher.LoadPage("FriendsPage")); break;}
+
+            case "grMessages":
+                {
+                    NavigationService.Navigate(dispatcher.LoadPage("MessagePage")); break;
+                }
+            case "grAudio":
+                    {
+                        NavigationService.Navigate(dispatcher.LoadPage("AudioPage")); break;
+                }
+            case "grLogin":
+                    {
+                        NavigationService.Navigate(dispatcher.LoadPage("LoginPage")); break;
+                }
+                default:
+                {
+                    break;
+                }
+
+
+            }
+
         }
     }
 }

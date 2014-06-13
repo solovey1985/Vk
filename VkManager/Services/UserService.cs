@@ -17,9 +17,7 @@ namespace Vk.DTO.Services
         {
             ClearParameters();
             parameters["method"] = "users.get";
-            parameters["fields"] = getUserFields();
             parameters["uids"] = setUsersIds(usersId);
-            
             response = api.RunRequest(parameters);
             ParseAnswer();
             
@@ -66,19 +64,7 @@ namespace Vk.DTO.Services
 
 
         #region Private Methods
-        /// <summary>
-        ///     Формирование строки полей информации о пользователях
-        /// </summary>
-        /// <returns></returns>
-        private string getUserFields()
-        {
-            string userFields = string.Empty;
-            userFields =
-                "uid, first_name, last_name, last_seen, counters, nickname, relation, sex, birthdate, city, country, timezone, photo, photo_big, photo_rec, photo_50, online";
-
-            return userFields;
-        }
-
+        
         /// <summary>
         ///     Формирование строчки ID пользователей
         /// </summary>

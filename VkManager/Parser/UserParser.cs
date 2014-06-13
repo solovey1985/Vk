@@ -22,7 +22,8 @@ namespace Vk.DTO.Services.Parser
                     user.Photo = GetNodeValue(node, "photo_big");
                     user.Sex = GetNodeValue(node, "sex");
                     user.Last_seen = GetNodeValue(node, "last_seen");
-
+                    user.Photo_100 = GetNodeValue(node, "photo_100");
+                    user.Photo_50 = GetNodeValue(node, "photo_50");
                     userList.Add(user);
                 }
             }

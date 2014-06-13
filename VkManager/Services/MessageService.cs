@@ -89,6 +89,18 @@ namespace Vk.DTO.Services
             throw new NotImplementedException();
         }
 
-       
+        public void messagesMarkAsRead(string messageIds)
+        {
+            ClearParameters();
+            parameters["method"] = "messages.markAsRead";
+            parameters["message_ids"] = messageIds;
+            try{
+                response = api.RunRequest(parameters);
+            }
+            catch (Exception){
+                
+                throw;
+            }
+        }
     }
 }

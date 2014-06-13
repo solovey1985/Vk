@@ -69,8 +69,6 @@ namespace Vk.DTO.Api
             
             //вернуть ответ в нужной форме
             return response.GetResponse();
-
-
         }
 
         public void Authorize(string login, string pass)

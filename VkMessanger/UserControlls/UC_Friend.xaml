@@ -28,7 +28,7 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Grid.Column="0">
-            <Image  Name="Photo" Source="{Binding Path=Photo_100}" Height="50" Width="50"></Image>
+            <Image  Name="Photo" Source="{Binding Path=Photo_100, IsAsync=True}" Height="50" Width="50"></Image>
         </StackPanel>
         <StackPanel Grid.Column="1" Width="200" Style="{StaticResource UCFriendStyle}">
             <TextBlock Name="Surname" Text="{Binding Path=First_name}"/>

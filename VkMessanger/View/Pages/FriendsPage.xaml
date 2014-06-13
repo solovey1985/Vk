@@ -9,8 +9,8 @@
       x:Name="MyFriendsPage"
       xmlns:view="clr-namespace:Vk.GUI.View.Pages"   
       xmlns:viewModel ="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels" 
-         
-      DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
+      xmlns:Providers="clr-namespace:Vk.DTO.Controllers;assembly=VkControllers"
+     DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
       mc:Ignorable="d" 
          
       d:DesignHeight="300" d:DesignWidth="300"
@@ -19,13 +19,15 @@
     <Page.Resources>
         <DataTemplate DataType="{x:Type viewModel:FriendsOnlineVM}">
             <view:UC_Friend/>
-        </DataTemplate>        
+        </DataTemplate>
+       
+        
     </Page.Resources>
     
    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
    <StackPanel>
            <Label><Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink></Label>
@@ -41,18 +43,25 @@
         <StackPanel Grid.Column="1">
             <!-- ! -->
             <TabControl 
-                    ItemsSource="{Binding Pages}"
+                    ItemsSource="{Binding Path=Pages}"
                     HorizontalAlignment="Left" 
                     Name="Tabs" 
                     VerticalAlignment="Top"
+                    SelectedIndex="0"
             >
+                <Style TargetType="{x:Type TabControl}">
+                    <Style.Triggers>
+                        <Trigger Property="ItemsSource" Value="{x:Null}">
+                            <Setter Property="Template" Value="{StaticResource WaitControlTemplate}"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
                 <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
                         <Setter Property="Header" Value="{Binding Name}"/>
                     </Style>
                 </TabControl.ItemContainerStyle>
-                <!-- ! -->
-           </TabControl>
+            </TabControl>
 
         </StackPanel>
     </Grid>

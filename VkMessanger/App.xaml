@@ -6,6 +6,6 @@
     
     <!--  StartupUri="View/Pages/MainPage.xaml" StartupUri="View/Main.xaml"-->
     <Application.Resources>
-         
+             <ResourceDictionary Source="View/Templates/Template.xaml"></ResourceDictionary>
     </Application.Resources>
 </Application>

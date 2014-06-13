@@ -17,13 +17,10 @@ namespace VkGUI.View.Pages
     /// </summary>
     public partial class MessagesPage
     {
-        private GUIDispatcher dispatcher;
-        
-        public MessageListViewModel MessageListViewModel { get; set; }
+        private MessageListViewModel _viewModel;
+        public MessageListViewModel MessageListViewModel { get { return _viewModel; } set { _viewModel = value; } }
         public MessagesPage(){
-           dispatcher = new GUIDispatcher();
-           MessageListViewModel = dispatcher.LoadMessageViewModel();
-           InitializeComponent();
+          InitializeComponent();
           }
     }
 }

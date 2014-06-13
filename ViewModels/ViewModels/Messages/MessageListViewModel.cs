@@ -29,6 +29,7 @@ namespace Vk.DTO.ViewModels
             MessageVMList=new MessageViewModel();
             pages = new ObservableCollection<IMessagePage>();
         }
+
         
     }
 }
