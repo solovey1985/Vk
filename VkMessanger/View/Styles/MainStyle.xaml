@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels"
+                    xmlns:pages="clr-namespace:Vk.GUI.View.Pages">
+    <Style x:Key="TabControlStyle" TargetType="TabControl">
+        <!-- Triggers    -->
+        <Style.Triggers>
+            <Trigger Property="ItemsSource" Value="{x:Null}">
+                <Setter Property="TabControl.Template" Value="{StaticResource WaitControlTemplate}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+
+        <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+
+</ResourceDictionary>

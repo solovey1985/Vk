@@ -22,7 +22,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <!-- <ContentPresenter Grid.Row="1" x:Name="Friend" /> -->
+       
         <StackPanel>
         <Label>
             <Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink>
@@ -36,14 +36,15 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Column="1">
-            <!-- ! -->
-            <TabControl 
+        <Grid Grid.Column="1">
+          <TabControl 
                     ItemsSource="{Binding Pages, IsAsync=True}"
                     HorizontalAlignment="Left" 
                     Name="Tabs" 
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Stretch"
                     SelectedIndex="0"
+                    Style="{StaticResource TabControlStyle}"
+                
             >
                 <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
@@ -53,6 +54,6 @@
                 <!-- ! -->
             </TabControl>
 
-        </StackPanel>
+        </Grid>
     </Grid>
 </av:Page>

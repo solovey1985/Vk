@@ -7,36 +7,23 @@
       WindowTitle="Мои друзья"
          
       x:Name="MyFriendsPage"
-      xmlns:view="clr-namespace:Vk.GUI.View.Pages"   
-      xmlns:viewModel ="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels" 
+   
      
          DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
       mc:Ignorable="d" 
          
       d:DesignHeight="300" d:DesignWidth="300"
 	       >
-<!-- ! -->    
-    <Page.Resources>
-        <DataTemplate DataType="{x:Type viewModel:FriendsOnlineVM}">
-            <view:UC_Friend/>
-        </DataTemplate>
-         <Style x:Key="TabControlStyle">
-             <Style.Triggers>
-                 <DataTrigger Binding="{Binding Path=FriendsOnlineVM}" Value="{x:Null}">
-                     <Setter Property="TabControl.Template" Value="{StaticResource WaitControlTemplate}"></Setter>
-                 </DataTrigger>
-             </Style.Triggers>
-         </Style>
-        
-    </Page.Resources>
-    
-   <Grid>
+    <!-- ! -->
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-   <StackPanel>
-           <Label><Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink></Label>
+        <StackPanel>
+            <Label>
+                <Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink>
+            </Label>
             <Label>
                 <Hyperlink NavigateUri="MessagesPage.xaml">Messages</Hyperlink>
             </Label>
@@ -46,7 +33,7 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Column="1">
+        <Grid Grid.Column="1">
             <!-- ! -->
             <TabControl 
                     ItemsSource="{Binding Path=Pages}"
@@ -56,22 +43,13 @@
                     SelectedIndex="0"
                     Style="{StaticResource TabControlStyle}"
             >
-                <!--
-                <Style TargetType="{x:Type TabControl}">
-                    <Style.Triggers>
-                        <Trigger Property="ItemsSource" Value="{x:Null}">
-                            <Setter Property="Template" Value="{StaticResource WaitControlTemplate}"></Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-                -->
-                <TabControl.ItemContainerStyle>
+     <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
                         <Setter Property="Header" Value="{Binding Name}"/>
                     </Style>
                 </TabControl.ItemContainerStyle>
             </TabControl>
 
-        </StackPanel>
+        </Grid>
     </Grid>
 </av:Page>

@@ -6,6 +6,12 @@
     
     <!--  StartupUri="View/Pages/MainPage.xaml" StartupUri="View/Main.xaml"-->
     <Application.Resources>
-             <ResourceDictionary Source="View/Templates/Template.xaml"></ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/Templates/Template.xaml"/>
+                <ResourceDictionary Source="View/Styles/MainStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+             
     </Application.Resources>
 </Application>
