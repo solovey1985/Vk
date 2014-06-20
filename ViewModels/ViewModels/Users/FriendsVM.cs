@@ -10,7 +10,7 @@ namespace Vk.DTO.ViewModels
     public class FriendsVM: ViewModel
     {
         private FriendsOnlineVM _friendsOnlineVM;
-
+        public bool IsLoaded { get; set; }
         private ObservableCollection<IFriendsPage> pages;
         public ObservableCollection<IFriendsPage> Pages{get { return pages; } set { pages = value; }}
 

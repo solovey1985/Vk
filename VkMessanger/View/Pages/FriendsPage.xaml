@@ -25,10 +25,7 @@
                  <DataTrigger Binding="{Binding Path=FriendsOnlineVM}" Value="{x:Null}">
                      <Setter Property="TabControl.Template" Value="{StaticResource WaitControlTemplate}"></Setter>
                  </DataTrigger>
-                <DataTrigger Binding="{Binding Path=FriendsOnlineVM}" Value="{x:Type viewModel:FriendsVM}">
-                    <Setter Property="TabControl.Template" Value="{x:Null}"></Setter>
-                </DataTrigger>
-            </Style.Triggers>
+             </Style.Triggers>
          </Style>
         
     </Page.Resources>
