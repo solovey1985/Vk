@@ -38,4 +38,8 @@
             </DockPanel>
         </Border>
     </ControlTemplate>
+    
+    <Style x:Key="TabControl">
+        
+    </Style>
 </ResourceDictionary>

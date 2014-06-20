@@ -9,8 +9,8 @@
       x:Name="MyFriendsPage"
       xmlns:view="clr-namespace:Vk.GUI.View.Pages"   
       xmlns:viewModel ="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels" 
-      xmlns:Providers="clr-namespace:Vk.DTO.Controllers;assembly=VkControllers"
-     DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
+     
+         DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
       mc:Ignorable="d" 
          
       d:DesignHeight="300" d:DesignWidth="300"
@@ -20,7 +20,16 @@
         <DataTemplate DataType="{x:Type viewModel:FriendsOnlineVM}">
             <view:UC_Friend/>
         </DataTemplate>
-       
+         <Style x:Key="TabControlStyle">
+             <Style.Triggers>
+                 <DataTrigger Binding="{Binding Path=FriendsOnlineVM}" Value="{x:Null}">
+                     <Setter Property="TabControl.Template" Value="{StaticResource WaitControlTemplate}"></Setter>
+                 </DataTrigger>
+                <DataTrigger Binding="{Binding Path=FriendsOnlineVM}" Value="{x:Type viewModel:FriendsVM}">
+                    <Setter Property="TabControl.Template" Value="{x:Null}"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+         </Style>
         
     </Page.Resources>
     
@@ -44,11 +53,13 @@
             <!-- ! -->
             <TabControl 
                     ItemsSource="{Binding Path=Pages}"
-                    HorizontalAlignment="Left" 
+                    HorizontalAlignment="Stretch" 
                     Name="Tabs" 
-                    VerticalAlignment="Top"
+                    VerticalAlignment="Stretch"
                     SelectedIndex="0"
+                    Style="{StaticResource TabControlStyle}"
             >
+                <!--
                 <Style TargetType="{x:Type TabControl}">
                     <Style.Triggers>
                         <Trigger Property="ItemsSource" Value="{x:Null}">
@@ -56,6 +67,7 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
+                -->
                 <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
                         <Setter Property="Header" Value="{Binding Name}"/>
