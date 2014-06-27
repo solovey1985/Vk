@@ -68,6 +68,9 @@
     <Compile Include="UserControlls\UC_Friend.xaml.cs">
       <DependentUpon>UC_Friend.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlls\UC_Login.xaml.cs">
+      <DependentUpon>UC_Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlls\UC_Message.xaml.cs">
       <DependentUpon>UC_Message.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Page Include="UserControlls\UC_Friend.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlls\UC_Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlls\UC_Message.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Templates\Template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Templates\VkItemsTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

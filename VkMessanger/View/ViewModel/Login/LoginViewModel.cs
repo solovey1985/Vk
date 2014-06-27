@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Vk.GUI;
+using Vk.GUI.View.Pages;
 using VkGUI.Model;
 
 namespace VkGUI.ViewModel.Login
 {
-    class LoginViewModel
+   public class LoginViewModel
     {
         public LoginViewModel()
         {

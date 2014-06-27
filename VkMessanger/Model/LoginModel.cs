@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Vk.DTO.Auth;
 using VkGUI.Annotations;
 
-namespace VkGUI.Model
+namespace Vk.GUI.View.Pages
 {
-    class LoginModel: INotifyPropertyChanged
+    public class LoginModel: INotifyPropertyChanged
     {
         private string login;
         private string pass;

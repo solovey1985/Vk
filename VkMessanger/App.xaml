@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              
              >
-    
-    <!--  StartupUri="View/Pages/MainPage.xaml" StartupUri="View/Main.xaml"-->
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/Templates/VkItemsTemplates.xaml"/>
                 <ResourceDictionary Source="View/Templates/Template.xaml"/>
                 <ResourceDictionary Source="View/Styles/MainStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>

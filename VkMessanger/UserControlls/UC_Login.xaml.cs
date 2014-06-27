@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Vk.DTO.ViewModels;
-using VkGUI.ViewModel.Login;
 
-namespace VkGUI.View.Pages
+namespace Vk.GUI.View.Pages
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for UC_Login.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class UC_Login : UserControl
     {
-        private LoginViewModel viewModel;
-
-        public LoginViewModel ViewModel { get { return viewModel; } set { viewModel = value; } }
-
-        public LoginPage()
+        public UC_Login()
         {
             InitializeComponent();
-            
         }
     }
 }

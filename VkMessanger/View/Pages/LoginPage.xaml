@@ -2,71 +2,18 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:viewModel="clr-namespace:VkGUI.ViewModel.Login"
+      xmlns:pages="clr-namespace:Vk.GUI.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
+      DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
 	Title="LoginPage">
-    <Page.Resources>
-      <Style x:Key="FontTextBox">
-      <Style.Setters>
-          <Setter Property="Control.FontSize" Value="18"></Setter>
-           <Setter Property="Control.Foreground" Value="DimGray"></Setter>
-           <Setter Property="Control.HorizontalContentAlignment" Value="Center"></Setter>
-        </Style.Setters>   
-        <Style.Triggers>
-            <Trigger Property="Control.IsFocused" Value="True">
-                <Setter Property="Control.Foreground" Value="DarkGreen"></Setter>
-                <Setter Property="Control.BorderBrush" Value="DodgerBlue"></Setter>
-                <Setter Property="Control.BorderThickness" Value="3"></Setter>
-            </Trigger>
-        </Style.Triggers> 
-     </Style>
-        <Style x:Key="ResizeFont">
-            <Style.Triggers>
-                <EventTrigger RoutedEvent="Mouse.MouseEnter">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Duration="0:0:0.2"
-                                                 Storyboard.TargetProperty="FontSize"
-                                                 To="22">
-                                </DoubleAnimation>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="Mouse.MouseLeave">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Duration="0:0:1"
-                                                 Storyboard.TargetProperty="FontSize">
-                                </DoubleAnimation>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
-                </EventTrigger>
-            </Style.Triggers>
-        </Style>
-    </Page.Resources>
-    <Grid> 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <DockPanel Grid.Column="1" LastChildFill="False">
-            <Label DockPanel.Dock="Top" Content="Авторизируйтесь, пожалуйста."></Label>
-            <Label DockPanel.Dock="Top" Content="Ваш логин" ></Label>
-            <TextBox DockPanel.Dock="Top" Margin="5 0 5 5" x:Name="txbxLogin" Text="{Binding Path=Login.Login, UpdateSourceTrigger=LostFocus}" Style="{StaticResource FontTextBox}"></TextBox>
-            <Label DockPanel.Dock="Top" Content="Ваш пароль"></Label>
-            <TextBox DockPanel.Dock="Top" Margin="5 0 5 5" x:Name="txbxPass" Text="{Binding Path=Login.Pass, UpdateSourceTrigger=LostFocus}"  Style="{StaticResource FontTextBox}"></TextBox>
-            <Button DockPanel.Dock="Top"  Content="Войти" Margin="5 10 5 5" Command="{Binding LoginCommand}"/>
-            
-
-        </DockPanel>
-    </Grid>
+    <DockPanel>
+            <ItemsControl ItemsSource="{Binding }">
+                
+            </ItemsControl>
+    </DockPanel>
+    
+   
 </Page>

@@ -7,14 +7,14 @@
       WindowTitle="Мои друзья"
          
       x:Name="MyFriendsPage"
-   
+      xmlns:view="clr-namespace:Vk.GUI.View.Pages"   
+      xmlns:viewModel ="clr-namespace:Vk.DTO.ViewModels;assembly=ViewModels" 
      
          DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
       mc:Ignorable="d" 
          
       d:DesignHeight="300" d:DesignWidth="300"
 	       >
-    <!-- ! -->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -37,13 +37,13 @@
             <!-- ! -->
             <TabControl 
                     ItemsSource="{Binding Path=Pages}"
-                    HorizontalAlignment="Stretch" 
+                    HorizontalAlignment="Right" 
                     Name="Tabs" 
                     VerticalAlignment="Stretch"
                     SelectedIndex="0"
                     Style="{StaticResource TabControlStyle}"
             >
-     <TabControl.ItemContainerStyle>
+          <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
                         <Setter Property="Header" Value="{Binding Name}"/>
                     </Style>
