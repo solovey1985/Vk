@@ -15,7 +15,7 @@ namespace Vk.GUI.View.Pages
         private string login;
         private string pass;
         private string loginResult;
-       
+        private bool isLoggedIn = false;
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -47,19 +47,29 @@ namespace Vk.GUI.View.Pages
             try
             {
                 authManager.GetRealAuth(this.Login, this.Pass);
-                login = "Success";
+                loginResult = "Success";
             }
             catch (Exception)
             {
                 login = "Failed";
                 return false;
             }
-            
-            if (string.IsNullOrEmpty(VkAuthInfo.AccessToken))
+
+            if (string.IsNullOrEmpty(VkAuthInfo.AccessToken)){
+                isLoggedIn = false;
                 return false;
-            return true;
+            }
+            else{
+                isLoggedIn = true;
+                return true;    
+            }
+            
         }
 
+        public bool IsLoggedIn
+        {
+            get { return isLoggedIn; }
+        }
 
     }
 }

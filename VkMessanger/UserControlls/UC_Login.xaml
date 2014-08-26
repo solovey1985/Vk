@@ -5,16 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-   
-            <DockPanel  LastChildFill="False">
-                <Label DockPanel.Dock="Top" Content="Авторизируйтесь, пожалуйста."></Label>
-                <Label DockPanel.Dock="Top" Content="Ваш логин" ></Label>
-                <TextBox DockPanel.Dock="Top" Margin="5 0 5 5" x:Name="txbxLogin" Text="{Binding Path=Login.Login, UpdateSourceTrigger=LostFocus}" Style="{StaticResource FontTextBox}"></TextBox>
+     <UserControl.Resources>
+         <Style x:Key="EllipseStyle" TargetType="Ellipse">
+             <Style.Triggers>
+                 <DataTrigger Binding="{Binding  Login.Login, UpdateSourceTrigger=PropertyChanged}" Value="">
+                    <Setter Property="Ellipse.Fill" Value="Green"></Setter> 
+                 </DataTrigger>
+            </Style.Triggers>
+         </Style>
+     </UserControl.Resources>       
+    <DockPanel  LastChildFill="False">
+                <StackPanel DockPanel.Dock="Top">
+            <Ellipse HorizontalAlignment="Left" Style="{StaticResource EllipseStyle}"
+                    Width="50"
+                    Height="50"
+                    Fill="Red"
+                    StrokeThickness="4" />
+        </StackPanel>
+             <StackPanel DockPanel.Dock="Top">
+                <Label DockPanel.Dock="Top" Content="{Binding Login.LoginResult}"/>
+                
+                <Label DockPanel.Dock="Top" Content="Ваш логин"/>
+                <TextBox 
+                    DockPanel.Dock="Top" 
+                    Margin="5 0 5 5" 
+                    x:Name="txbxLogin" 
+                    Text="{Binding Path=Login.Login, UpdateSourceTrigger=LostFocus}" Style="{StaticResource FontTextBox}"></TextBox>
                 <Label DockPanel.Dock="Top" Content="Ваш пароль"></Label>
                 <TextBox DockPanel.Dock="Top" Margin="5 0 5 5" x:Name="txbxPass" Text="{Binding Path=Login.Pass, UpdateSourceTrigger=LostFocus}"  Style="{StaticResource FontTextBox}"></TextBox>
-                <Button DockPanel.Dock="Top"  Content="Войти" Margin="5 10 5 5" Command="{Binding LoginCommand}"/>
-
-
-            </DockPanel>
+        
+        <Button DockPanel.Dock="Top"  Content="Войти" Margin="5 10 5 5" Command="{Binding LoginCommand}"/>
+        </StackPanel>
+    </DockPanel>
         
 </UserControl>

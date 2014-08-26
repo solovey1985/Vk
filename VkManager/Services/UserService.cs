@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using Castle.Components.DictionaryAdapter;
+
 using Vk.DTO.Domain;
 using Vk.DTO.Services.Parser;
 using Vk.Interfaces.Services;

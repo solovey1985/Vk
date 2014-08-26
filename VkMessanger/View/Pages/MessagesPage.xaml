@@ -18,28 +18,9 @@
         </DataTemplate>
     </Page.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-       
-        <StackPanel>
-        <Label>
-            <Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink>
-        </Label>
-        <Label>
-            <Hyperlink NavigateUri="MessagesPage.xaml">Messages</Hyperlink>
-        </Label>
-        <Label>
-            <Hyperlink NavigateUri="AudiosPage.xaml">Audio</Hyperlink>
-        </Label>
-
-        </StackPanel>
-
-        <Grid Grid.Column="1">
+   <Grid>
           <TabControl 
                     ItemsSource="{Binding Pages, IsAsync=True}"
-                    HorizontalAlignment="Left" 
                     Name="Tabs" 
                     VerticalAlignment="Stretch"
                     SelectedIndex="0"

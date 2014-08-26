@@ -1,14 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Vk.DTO.Controllers;
-using Vk.DTO.Domain;
-using Vk.DTO.Services;
-using Vk.DTO.ViewModels;
-using Vk.GUI.Dispatcher;
-using Vk.Interfaces.Domain;
-using Vk.GUI.UserControlls;
-using VkGUI.ViewModel.MainController;
-
+﻿using Vk.DTO.ViewModels;
 
 namespace VkGUI.View.Pages
 {

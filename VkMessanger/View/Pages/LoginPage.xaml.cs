@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Vk.DTO.ViewModels;
+﻿using System.Windows.Controls;
+using Vk.GUI.View.Pages;
 using VkGUI.ViewModel.Login;
 
 namespace VkGUI.View.Pages
@@ -29,7 +16,10 @@ namespace VkGUI.View.Pages
         public LoginPage()
         {
             InitializeComponent();
-            
+            UC_Login uc_Login = new UC_Login();
+            uc_Login.DataContext = new LoginViewModel();
+            UC_Parent.Content = uc_Login;
+
         }
     }
 }

@@ -10,9 +10,9 @@
       DataContext="{Binding ViewModel, ElementName=MyFriendsPage}"
 	Title="LoginPage">
     <DockPanel>
-            <ItemsControl ItemsSource="{Binding }">
+            <ContentControl x:Name="UC_Parent">
                 
-            </ItemsControl>
+            </ContentControl>
     </DockPanel>
     
    

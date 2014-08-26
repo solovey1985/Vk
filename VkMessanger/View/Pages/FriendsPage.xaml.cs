@@ -1,9 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using ViewModels.Annotations;
-using Vk.GUI.Dispatcher;
-using VkGUI.ViewModel;
+﻿using System.Windows.Controls;
 using Vk.DTO.ViewModels;
 
 namespace VkGUI.View.Pages

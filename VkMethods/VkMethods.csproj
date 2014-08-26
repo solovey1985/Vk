@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82580ECA-681A-422C-8DFB-E89BCB851ABF}</ProjectGuid>
+    <ProjectGuid>{33F2BBC4-0205-4B82-9586-A0F5C72DE06D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VkApp</RootNamespace>
-    <AssemblyName>VkApi</AssemblyName>
+    <RootNamespace>VkMethods</RootNamespace>
+    <AssemblyName>VkMethods</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,12 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>D:\tfs\Mainline\3rdPartyLibs\Apache\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,40 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="VkApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\VkHelper.cs" />
-    <Compile Include="Methods\VkMethodManager.cs" />
-    <Compile Include="Requests\VkRequest.cs" />
-    <Compile Include="Requests\VkRequestBuilder.cs" />
-    <Compile Include="Requests\VkResponse.cs" />
-    <Compile Include="Requests\VkResponseHandler.cs" />
+    <Compile Include="VkMethod.cs" />
+    <Compile Include="VkParameter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VkAuth\VkAuth.csproj">
-      <Project>{877aa5ea-bff3-4ea2-8b84-2de85e7006b1}</Project>
-      <Name>VkAuth</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VkInterfaces\VkInterfaces.csproj">
       <Project>{1c717e7d-fe26-406f-b635-4adf4de6da5e}</Project>
       <Name>VkInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VkMethods\VkMethods.csproj">
-      <Project>{33f2bbc4-0205-4b82-9586-a0f5c72de06d}</Project>
-      <Name>VkMethods</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -84,6 +84,10 @@
       <Project>{1c717e7d-fe26-406f-b635-4adf4de6da5e}</Project>
       <Name>VkInterfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VkMethods\VkMethods.csproj">
+      <Project>{33f2bbc4-0205-4b82-9586-a0f5c72de06d}</Project>
+      <Name>VkMethods</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VkObjects\VkModels.csproj">
       <Project>{c5ec8e30-2c34-48e5-8fdb-f69a4f40bd75}</Project>
       <Name>VkModels</Name>

@@ -16,40 +16,28 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	       >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel>
-            <Label>
-                <Hyperlink NavigateUri="MainPage.xaml">Главная</Hyperlink>
-            </Label>
-            <Label>
-                <Hyperlink NavigateUri="MessagesPage.xaml">Messages</Hyperlink>
-            </Label>
-            <Label>
-                <Hyperlink NavigateUri="AudiosPage.xaml">Audio</Hyperlink>
-            </Label>
-        </StackPanel>
-
-
-        <Grid Grid.Column="1">
+   
+       <ScrollViewer VerticalScrollBarVisibility="Auto" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical">
+        <Grid >
             <!-- ! -->
+           
             <TabControl 
                     ItemsSource="{Binding Path=Pages}"
-                    HorizontalAlignment="Right" 
                     Name="Tabs" 
                     VerticalAlignment="Stretch"
                     SelectedIndex="0"
                     Style="{StaticResource TabControlStyle}"
             >
+                 
           <TabControl.ItemContainerStyle>
                     <Style TargetType="TabItem">
                         <Setter Property="Header" Value="{Binding Name}"/>
                     </Style>
                 </TabControl.ItemContainerStyle>
             </TabControl>
+           
 
         </Grid>
+        </ScrollViewer>
     </Grid>
 </av:Page>

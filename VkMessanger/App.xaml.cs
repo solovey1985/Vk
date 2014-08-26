@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using VkGUI.View;
+using VkGUI.View.Pages;
 using VkGUI.ViewModel;
 using VkGUI.ViewModel.MainController;
 
@@ -17,12 +18,13 @@ namespace VkGUI
     /// </summary>
     public partial class App : Application
     {
-        MainController controller =new MainController();
-        Main mainWindow = new Main();
-
-        public App(){
-            mainWindow.DataContext = controller;
-            mainWindow.Show();
-        }
+       
+           MainController controller;
+            MainPage page;
+        public App(){    
+            controller =new MainController();
+            page = new MainPage();
+            page.DataContext = controller;
+        }   
     }
 }
