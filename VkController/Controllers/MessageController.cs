@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using ViewModels.Models;
 using Vk.DTO.Domain;
 using Vk.DTO.Services;
 using Vk.DTO.ViewModels;
-using Vk.Interfaces.Services;
-using Vk.Interfaces.ViewModels;
 
 namespace Vk.DTO.Controllers
 {

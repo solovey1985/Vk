@@ -15,7 +15,7 @@ namespace Vk.DTO.Services
     In = 0,
     Out = 1
 }
-    public class MessageService: VkService, IMessageService
+    public class MessageService: VkService  //, IMessageService
     {
         public IEnumerable<VkModel> messagesGet(int count, MessageDirection messageDirection)
         {

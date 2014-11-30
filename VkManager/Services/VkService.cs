@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
+using Vk.DTO.Api;
 using Vk.DTO.Domain;
 using  System.Xml;
 using Vk.DTO.Services.Parser;
@@ -22,7 +23,8 @@ namespace Vk.DTO.Services
         public bool IsAthorized {get { return api.IsAuthorized; }}
 
         public VkService(){
-            api = ServiceFactory.GetService<IVkApi>();
+            //api = ServiceFactory.GetService<IVkApi>();
+            api = new VkApi();
             parameters = new NameValueCollection();
         }
 
@@ -39,7 +41,7 @@ namespace Vk.DTO.Services
         {
             if (api.IsAuthorized){
                 return true;}
-            api.Authorize(login, pass);
+            api.Login(login, pass);
                 if (api.IsAuthorized){
                     return true;
                 }

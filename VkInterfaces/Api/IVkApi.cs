@@ -9,11 +9,25 @@ using Vk.Interfaces.DAL;
 
 namespace Vk.Interfaces.Api
 {
-   public interface IVkApi
+    public interface IApi
+    {}
+
+    public interface IVkApi : IApi
    {
        bool IsAuthorized { get; }
+       //TODO Избавиться от лишнего метода
        XmlDocument RunRequest(IMethod method);
        XmlDocument RunRequest(NameValueCollection parameters);
-       void Authorize(string login, string pass);
+       void Login(string login, string pass);
    }
+
+    public interface IApiResponse{}
+
+    public interface IApiRequest{}
+
+    public interface IXmlResponse : IApiResponse{}
+
+    public interface IJsonResponse : IApiResponse{}
+
+
 }

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14016890-BA76-4CE7-BF0B-9FAB8F22E221}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vk2</RootNamespace>
+    <AssemblyName>Vk2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers.cs" />
+    <Compile Include="Controllers\AudioController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Enums\AddFriendStatus.cs" />
+    <Compile Include="Enums\AdminLevel.cs" />
+    <Compile Include="Enums\Attitude.cs" />
+    <Compile Include="Enums\AudioGenre.cs" />
+    <Compile Include="Enums\AudioSort.cs" />
+    <Compile Include="Enums\BanReason.cs" />
+    <Compile Include="Enums\CommentsSort.cs" />
+    <Compile Include="Enums\DeleteFriendStatus.cs" />
+    <Compile Include="Enums\Display.cs" />
+    <Compile Include="Enums\FriendsOrder.cs" />
+    <Compile Include="Enums\FriendStatus.cs" />
+    <Compile Include="Enums\GroupPublicity.cs" />
+    <Compile Include="Enums\GroupsFields.cs" />
+    <Compile Include="Enums\GroupsFilters.cs" />
+    <Compile Include="Enums\GroupsSort.cs" />
+    <Compile Include="Enums\GroupType.cs" />
+    <Compile Include="Enums\LifeMain.cs" />
+    <Compile Include="Enums\LinkAccessType.cs" />
+    <Compile Include="Enums\MessageReadState.cs" />
+    <Compile Include="Enums\MessagesFilter.cs" />
+    <Compile Include="Enums\MessageType.cs" />
+    <Compile Include="Enums\Methods.cs" />
+    <Compile Include="Enums\NameCase.cs" />
+    <Compile Include="Enums\PageAccessKind.cs" />
+    <Compile Include="Enums\PeopleMain.cs" />
+    <Compile Include="Enums\PoliticalPreferences.cs" />
+    <Compile Include="Enums\ProfileFields.cs" />
+    <Compile Include="Enums\RelationType.cs" />
+    <Compile Include="Enums\ReportType.cs" />
+    <Compile Include="Enums\Settings.cs" />
+    <Compile Include="Enums\Sex.cs" />
+    <Compile Include="Enums\VideoFilters.cs" />
+    <Compile Include="Enums\VideoReportType.cs" />
+    <Compile Include="Enums\VideoSort.cs" />
+    <Compile Include="Enums\VideoWidth.cs" />
+    <Compile Include="Enums\VkObjectType.cs" />
+    <Compile Include="Enums\WallFilter.cs" />
+    <Compile Include="Methods\MethodManager.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AudioService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Methods\Methods.cs" />
+    <Compile Include="Models.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs" />
+    <Compile Include="Services\PhotoService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\VideoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VkInterfaces.V2\VkInterfaces.V2.csproj">
+      <Project>{5d4810d9-0043-456d-b89c-565a05895901}</Project>
+      <Name>VkInterfaces.V2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

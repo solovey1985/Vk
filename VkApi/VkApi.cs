@@ -71,7 +71,7 @@ namespace Vk.DTO.Api
             return response.GetResponse();
         }
 
-        public void Authorize(string login, string pass)
+        public void Login(string login, string pass)
         {
             if (authManager == null)
                 authManager = new VkAuthManager();

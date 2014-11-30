@@ -10,8 +10,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using Vk.Interfaces.DAL;
-using Vk.DTO.Api.Properties;
+using Vk2.Properties;
+using VkInterfaces.V2;
+
 
 namespace Vk.DTO.Domain
 {

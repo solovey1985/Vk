@@ -17,7 +17,8 @@ namespace Vk.DTO.Controllers
 
         public UserController()
         {
-            _service = ServiceFactory.GetService<IMessageService>();
+            //_service = ServiceFactory.GetService<IMessageService>();
+            _service = new MessageService();
         }
 
         public FriendsVM LoadUsersOnlineViewModel()

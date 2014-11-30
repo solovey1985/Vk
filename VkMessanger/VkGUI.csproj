@@ -186,7 +186,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{3A88C782-CA74-468B-99FA-60C3B5482E9A}</Project>
-      <Name>ViewModels %28ViewModels\ViewModels%29</Name>
+      <Name>ViewModels %28Vk\ViewModels\ViewModels%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\VkAuth\VkAuth.csproj">
       <Project>{877aa5ea-bff3-4ea2-8b84-2de85e7006b1}</Project>

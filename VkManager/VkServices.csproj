@@ -70,7 +70,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{3A88C782-CA74-468B-99FA-60C3B5482E9A}</Project>
-      <Name>ViewModels %28ViewModels\ViewModels%29</Name>
+      <Name>ViewModels %28Vk\ViewModels\ViewModels%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\VkApi\VkApi.csproj">
       <Project>{82580eca-681a-422c-8dfb-e89bcb851abf}</Project>
